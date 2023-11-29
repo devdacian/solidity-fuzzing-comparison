@@ -14,7 +14,7 @@ Every exercise has a "basic" and an "advanced" fuzz configuration for both Found
 Challenge #1 Naive Receiver: (Winner ECHIDNA)
 
 `echidna --config test/01-naive-receiver/NaiveReceiverBasicEchidna.yaml ./ --contract NaiveReceiverBasicEchidna`\
-`forge test --match-contract NaiveReceiverBasicFoundry`\
+`forge test --match-contract NaiveReceiverBasicFoundry`\\
 `echidna --config test/01-naive-receiver/NaiveReceiverAdvancedEchidna.yaml ./ --contract NaiveReceiverAdvancedEchidna`\
 `forge test --match-contract NaiveReceiverAdvancedFoundry`
 
