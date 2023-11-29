@@ -1,0 +1,11 @@
+# no initia eth required
+balanceContract: 0
+
+# Allow fuzzer to use public/external functions from all contracts
+allContracts: true
+
+# increase test limit to give fuzzer more time
+testLimit: 50000
+
+# specify address to use for fuzz transations
+sender: ["0x1337"]
