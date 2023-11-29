@@ -1,4 +1,8 @@
+# Solidity Fuzzing Challenge: Foundry vs Echidna #
+
 A comparion of solidity fuzzing tools like Foundry and Echidna. Using a more [recent](https://github.com/crytic/echidna/actions/runs/6747387119) build of Echidna which appears to work fine with Solidity 0.8.23.
+
+## Setup ##
 
 To compile:
 
@@ -11,7 +15,9 @@ To configure [solc-select](https://github.com/crytic/solc-select) for Echidna:
 
 Every exercise has a "basic" and an "advanced" fuzz configuration for both Foundry and Echidna. The "basic" configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The "advanced" configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
 
-Challenge #1 Naive Receiver: (Winner ECHIDNA)
+## Results ##
+
+### Challenge #1 Naive Receiver: (Winner ECHIDNA) ###
 
 `echidna --config test/01-naive-receiver/NaiveReceiverBasicEchidna.yaml ./ --contract NaiveReceiverBasicEchidna`\
 `forge test --match-contract NaiveReceiverBasicFoundry`
