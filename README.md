@@ -1,6 +1,6 @@
 # Solidity Fuzzing Challenge: Foundry vs Echidna #
 
-A comparion of solidity fuzzing tools Foundry and Echidna.
+A comparison of solidity fuzzing tools Foundry and Echidna.
 
 ## Setup ##
 
