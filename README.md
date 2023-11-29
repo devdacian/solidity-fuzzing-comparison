@@ -1,8 +1,10 @@
 # Solidity Fuzzing Challenge: Foundry vs Echidna #
 
-A comparion of solidity fuzzing tools like Foundry and Echidna. Using a more [recent](https://github.com/crytic/echidna/actions/runs/6747387119) build of Echidna which appears to work fine with Solidity 0.8.23.
+A comparion of solidity fuzzing tools Foundry and Echidna.
 
 ## Setup ##
+
+Install a more [recent](https://github.com/crytic/echidna/actions/runs/6747387119) build of Echidna which appears to work fine with Solidity 0.8.23.
 
 To compile:
 
