@@ -36,8 +36,9 @@ contract NaiveReceiverAdvancedFoundry is NaiveReceiverBasicFoundry {
         // available amount to prevent wasted runs
         vm.assume(borrowAmount <= INIT_ETH_POOL);
 
-        // call underlying function being tested with
-        // the receiver address to prevent wasted runs
+        // call underlying function being tested with the receiver address
+        // to prevent wasted runs. Initially tried it with address as fuzz
+        // input parameter but this was unable to break the harder invariant
         pool.flashLoan(address(receiver), borrowAmount);
     }
 
