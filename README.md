@@ -9,7 +9,7 @@ To configure [solc-select](https://github.com/crytic/solc-select) for Echidna:
 `solc-select install 0.8.23`\
 `solc-select use 0.8.23`
 
-Every exercise has a "basic" and an "advanced" fuzz configuration for both Foundry and Echidna. The "basic" configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The "advanced" configuration guides the fuzzer by directing the fuzzer to the functions it should call and helping to eliminate useless fuzz runs which just revert due to invalid input.
+Every exercise has a "basic" and an "advanced" fuzz configuration for both Foundry and Echidna. The "basic" configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The "advanced" configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
 
 Challenge #1 Naive Receiver: (Winner ECHIDNA)
 
