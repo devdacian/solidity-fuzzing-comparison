@@ -27,13 +27,12 @@ Every exercise has a `basic` and `advanced` fuzz configuration for both Foundry 
 `echidna --config test/01-naive-receiver/NaiveReceiverAdvancedEchidna.yaml ./ --contract NaiveReceiverAdvancedEchidna`\
 `forge test --match-contract NaiveReceiverAdvancedFoundry`
 
-
 In `basic` configuration both Foundry & Echidna are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration both Foundry & Echidna can break both invariants, but Echidna reduces the exploit chain to a very concise & optimized transaction set and presents this to the user in an easy to understand output. As a result Echidna is the clear winner of this challenge.
 
 ### Challenge #2 Unstoppable: (Winner ECHIDNA) ###
 
 `echidna --config test/02-unstoppable/UnstoppableBasicEchidna.yaml ./ --contract UnstoppableBasicEchidna`\
-`forge test --match-contract UnstoppableBasicFoundry`
+`forge test --match-contract UnstoppableBasicFoundry`\
 `forge test --match-contract UnstoppableAdvancedFoundry`
 
 Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration is totally unable to break either invariant. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Hence Echidna is the clear winner again.
