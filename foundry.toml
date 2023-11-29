@@ -3,4 +3,14 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+# include remappings
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+]
+
+[fuzz]
+runs = 10000
+max_local_rejects = 999999999                            
+max_test_rejects = 999999999
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

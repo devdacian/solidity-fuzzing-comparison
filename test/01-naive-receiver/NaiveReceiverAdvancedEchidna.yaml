@@ -1,0 +1,13 @@
+# 1010 ether is placed in the echidna testing contract
+# which then transfers ether to contract's being tested
+# as part of setup in constructor. Constructor must be
+# payable! This value should be in 18 decimals
+balanceContract: 1010000000000000000000
+
+# Don't allow fuzzer to use public/external functions
+# from all contracts as advanced version wraps specific
+# functions to focus on
+allContracts: false
+
+# increase this limit to give fuzzer more time
+testLimit: 50000

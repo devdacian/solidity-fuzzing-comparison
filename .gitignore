@@ -1,6 +1,7 @@
 # Compiler files
 cache/
 out/
+crytic-export/
 
 # Ignores development broadcast logs
 !/broadcast
