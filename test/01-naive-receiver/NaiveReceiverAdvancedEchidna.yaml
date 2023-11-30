@@ -1,5 +1,5 @@
 # 1010 ether is placed in the echidna testing contract
-# which then transfers ether to contract's being tested
+# which then transfers ether to contracts being tested
 # as part of setup in constructor. Constructor must be
 # payable! This value should be in 18 decimals
 balanceContract: 1010000000000000000000

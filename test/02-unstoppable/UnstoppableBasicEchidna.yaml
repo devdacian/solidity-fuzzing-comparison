@@ -1,4 +1,4 @@
-# no initia eth required
+# no initial eth required
 balanceContract: 0
 
 # Allow fuzzer to use public/external functions from all contracts
