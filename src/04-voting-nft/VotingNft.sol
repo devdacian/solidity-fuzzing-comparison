@@ -77,7 +77,7 @@ contract VotingNft is ERC721, Ownable {
 
         // input sanity checks
         require(requiredCollateral > 0, "VNFT: required collateral must be > 0");
-        require(powerCalcTimestamp >= block.timestamp, "VNFT: power calc timestamp must be in the future");
+        require(powerCalcTimestamp > block.timestamp, "VNFT: power calc timestamp must be in the future");
         require(maxNftPower > 0, "VNFT: max nft power must be > 0");
         require(nftPowerReductionPercent > 0, "VNFT: nft power reduction must be > 0");
         require(nftPowerReductionPercent < PERCENTAGE_100, "VNFT: nft power reduction too big");
