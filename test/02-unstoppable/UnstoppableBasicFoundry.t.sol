@@ -23,7 +23,7 @@ contract UnstoppableBasicFoundry is Test {
 
     function setUp() public virtual {
         // setup contracts to be tested
-        token    = new TestToken(INIT_TOKENS_POOL + INIT_TOKENS_ATTACKER);
+        token    = new TestToken(INIT_TOKENS_POOL + INIT_TOKENS_ATTACKER, 18);
         pool     = new UnstoppableLender(address(token));
         receiver = new ReceiverUnstoppable(payable(address(pool)));
 
