@@ -8,6 +8,3 @@ balanceContract: 1010000000000000000000
 # from all contracts as advanced version wraps specific
 # functions to focus on
 allContracts: false
-
-# increase this limit to give fuzzer more time
-testLimit: 50000

@@ -6,6 +6,3 @@ balanceContract: 1010000000000000000000
 
 # Allow fuzzer to use public/external functions from all contracts
 allContracts: true
-
-# increase test limit to give fuzzer more time
-testLimit: 50000
