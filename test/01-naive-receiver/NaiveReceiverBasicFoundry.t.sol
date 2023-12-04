@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
 import "../../src/01-naive-receiver/NaiveReceiverLenderPool.sol";
