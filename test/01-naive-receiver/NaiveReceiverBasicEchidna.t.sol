@@ -10,6 +10,8 @@ import "@openzeppelin/contracts/utils/Address.sol";
 //
 // run from base project directory with:
 // echidna --config test/01-naive-receiver/NaiveReceiverBasicEchidna.yaml ./ --contract NaiveReceiverBasicEchidna
+// medusa --config test/01-naive-receiver/NaiveReceiverMedusa.json fuzz
+// note: medusa not working yet as it doesn't support configuring initial eth balance
 contract NaiveReceiverBasicEchidna {
     using Address for address payable;
 

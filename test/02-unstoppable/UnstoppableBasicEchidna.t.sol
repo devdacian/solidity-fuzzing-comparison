@@ -11,6 +11,7 @@ import "../../src/TestToken.sol";
 //
 // run from base project directory with:
 // echidna --config test/02-unstoppable/UnstoppableBasicEchidna.yaml ./ --contract UnstoppableBasicEchidna
+// medusa --config test/02-unstoppable/UnstoppableMedusa.json fuzz
 contract UnstoppableBasicEchidna {
     
     // initial tokens in pool
@@ -22,7 +23,7 @@ contract UnstoppableBasicEchidna {
     ERC20               token;
     UnstoppableLender   pool;
     ReceiverUnstoppable receiver;
-    address             attacker = address(0x1337);
+    address             attacker = address(0x1000000000000000000000000000000000000000);
 
     // constructor has to be payable if balanceContract > 0 in yaml config
     constructor() payable {
@@ -42,7 +43,7 @@ contract UnstoppableBasicEchidna {
 
         // basic test with no advanced guiding of the fuzzer
         // Echidna frequently breaks the generic invariant and the more
-        // specific invariant with no guidance!
+        // specific invariant with no guidance. Same with Medusa!
     }
 
     // invariant #1 very generic but Echidna can still break it even

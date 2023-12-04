@@ -5,4 +5,4 @@ balanceContract: 0
 allContracts: true
 
 # specify address to use for fuzz transactions
-sender: ["0x1337"]
+sender: ["0x1000000000000000000000000000000000000000"]
