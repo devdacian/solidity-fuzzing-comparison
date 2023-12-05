@@ -35,4 +35,4 @@ In `basic` configuration both Foundry & Echidna are able to break the simpler in
 `forge test --match-contract UnstoppableBasicFoundry`\
 `forge test --match-contract UnstoppableAdvancedFoundry`
 
-Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration is totally unable to break either invariant. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Hence Echidna is the clear winner again.
+Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Hence Echidna is the clear winner again.
