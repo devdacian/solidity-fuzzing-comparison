@@ -43,7 +43,7 @@ In `basic` configuration both Foundry & Echidna are able to break the simpler in
 
 Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Medusa in `basic` configuration can always break both invariants and achieves this much faster than Echidna, making Medusa the clear winner.
 
-## Challenge #3 Proposal: (WINNER TIED) ###
+### Challenge #3 Proposal: (WINNER TIED) ###
 
 Both Foundry & Echidna in `basic` mode are able to easily break the invariant, resulting in a tie. Medusa is unable to be used for this challenge as it requires a feature currently under development.
 
