@@ -11,7 +11,7 @@ import "../../src/TestToken.sol";
 //
 // run from base project directory with:
 // echidna --config test/02-unstoppable/UnstoppableBasicEchidna.yaml ./ --contract UnstoppableBasicEchidna
-// medusa --config test/02-unstoppable/UnstoppableMedusa.json fuzz
+// medusa --config test/02-unstoppable/UnstoppableBasicMedusa.json fuzz
 contract UnstoppableBasicEchidna {
     
     // initial tokens in pool
@@ -23,7 +23,7 @@ contract UnstoppableBasicEchidna {
     ERC20               token;
     UnstoppableLender   pool;
     ReceiverUnstoppable receiver;
-    address             attacker = address(0x1000000000000000000000000000000000000000);
+    address             attacker = address(0x1337000000000000000000000000000000000000);
 
     // constructor has to be payable if balanceContract > 0 in yaml config
     constructor() payable {

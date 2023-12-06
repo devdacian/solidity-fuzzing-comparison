@@ -5,4 +5,8 @@ balanceContract: 0
 allContracts: true
 
 # specify address to use for fuzz transactions
-sender: ["0x1000000000000000000000000000000000000000"]
+sender: ["0x1337000000000000000000000000000000000000"]
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/02-unstoppable/coverage-echidna-basic"

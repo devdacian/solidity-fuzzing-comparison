@@ -8,3 +8,7 @@ balanceContract: 1010000000000000000000
 # from all contracts as advanced version wraps specific
 # functions to focus on
 allContracts: false
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/01-naive-receiver/coverage-echidna-advanced"
