@@ -45,15 +45,15 @@ Echidna in `basic` configuration can frequently break both invariants while Foun
 
 ### Challenge #3 Proposal: (WINNER TIED) ###
 
-Both Foundry & Echidna in `basic` mode are able to easily break the invariant, resulting in a tie. Medusa is unable to be used for this challenge as it requires a feature currently under development.
+Both Foundry & Echidna in `basic` mode are able to easily break the invariant, resulting in a tie. Medusa is unable to be used for this challenge as it requires a feature currently under development. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
 
 ### Challenge #4 Voting NFT: (WINNER TIED) ###
 
-In `basic` configuration Foundry, Echidna & Medusa are all able to break the easier invariant but not the more difficult one. All Fuzzers are able to provide the user with a minimal transaction set to generate the exploit. Hence they are tied, there is no clear winner.
+In `basic` configuration Foundry, Echidna & Medusa are all able to break the easier invariant but not the more difficult one. All Fuzzers are able to provide the user with a minimal transaction set to generate the exploit. Hence they are tied, there is no clear winner. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
 
 ### Challenge #5 Token Sale: (WINNER MEDUSA) ###
 
-In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner.
+In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
 
 ### Challenge #6 Rarely False: (Winner MEDUSA) ###
 
