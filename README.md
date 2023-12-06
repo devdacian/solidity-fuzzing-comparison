@@ -4,6 +4,8 @@ A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), E
 
 ## Setup ##
 
+Ensure you are using a recent version of [Foundry](https://github.com/foundry-rs/foundry) which includes [PR6530](https://github.com/foundry-rs/foundry/pull/6530). 
+
 Install a more [recent](https://github.com/crytic/echidna/actions/runs/6747387119) build of Echidna which appears to work fine with Solidity 0.8.23.
 
 Compile the [latest](https://github.com/crytic/medusa) Medusa source code as it is experimental and under active development.
@@ -21,7 +23,7 @@ Every exercise has a `basic` some optionally an `advanced` fuzz configuration fo
 
 ## Results ##
 
-### Challenge #1 Naive Receiver: (Winner ECHIDNA) ###
+### Challenge #1 Naive Receiver: (Winner TIED) ###
 
 `echidna --config test/01-naive-receiver/NaiveReceiverBasicEchidna.yaml ./ --contract NaiveReceiverBasicEchidna`\
 `forge test --match-contract NaiveReceiverBasicFoundry`
@@ -29,7 +31,7 @@ Every exercise has a `basic` some optionally an `advanced` fuzz configuration fo
 `echidna --config test/01-naive-receiver/NaiveReceiverAdvancedEchidna.yaml ./ --contract NaiveReceiverAdvancedEchidna`\
 `forge test --match-contract NaiveReceiverAdvancedFoundry`
 
-In `basic` configuration both Foundry & Echidna are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration both Foundry & Echidna can break both invariants, but Echidna reduces the exploit chain to a very concise & optimized transaction set and presents this to the user in an easy to understand output. As a result Echidna is the clear winner of this challenge.
+In `basic` configuration both Foundry & Echidna are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration both Foundry & Echidna can break both invariants. Both Foundry & Echidna reduce the exploit chain to a very concise & optimized transaction set and presents this to the user in an easy to understand output. As a result they are tied and there is no clear winner.
 
 ### Challenge #2 Unstoppable: (Winner ECHIDNA) ###
 
@@ -37,7 +39,7 @@ In `basic` configuration both Foundry & Echidna are able to break the simpler in
 `forge test --match-contract UnstoppableBasicFoundry`\
 `forge test --match-contract UnstoppableAdvancedFoundry`
 
-Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Hence Echidna is the clear winner again.
+Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Hence Echidna is the clear winner.
 
 ### Challenge #6 Rarely False: (Winner MEDUSA) ###
 
