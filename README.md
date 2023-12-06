@@ -17,7 +17,7 @@ To compile this project:
 
 `forge build`
 
-Every exercise has a `basic` some optionally an `advanced` fuzz configuration for both Foundry, Echidna & Medusa. The `basic` configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The `advanced` configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
+Every exercise has a `basic` some optionally an `advanced` fuzz configuration for Foundry, Echidna & Medusa. The `basic` configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The `advanced` configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
 
 ## Results ##
 
