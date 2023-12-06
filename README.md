@@ -1,6 +1,6 @@
 # Solidity Fuzzing Challenge: Foundry vs Echidna vs Medusa #
 
-A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), Echidna & Medusa. This challenge set is not intended to be an academically rigorous benchmark but rather to present the experience of an auditor "in the trenches"; the goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
+A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), Echidna & Medusa. This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
 
 ## Setup ##
 
