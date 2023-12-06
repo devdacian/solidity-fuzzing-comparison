@@ -6,6 +6,7 @@ pragma solidity ^0.8.23;
 //
 // run from base project directory with:
 // echidna --test-mode assertion ./ --contract RarelyFalseEchidna
+// medusa fuzz --assertion-mode --deployment-order "RarelyFalseEchidna"
 contract RarelyFalseEchidna {
 
     uint256 constant private OFFSET = 1234;
