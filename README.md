@@ -35,11 +35,10 @@ In `basic` configuration both Foundry & Echidna are able to break the simpler in
 
 ### Challenge #2 Unstoppable: (Winner MEDUSA) ###
 
-`echidna --config test/02-unstoppable/UnstoppableBasicEchidna.yaml ./ --contract UnstoppableBasicEchidna`
+`medusa --config test/02-unstoppable/UnstoppableBasicMedusa.json fuzz`\
+`echidna --config test/02-unstoppable/UnstoppableBasicEchidna.yaml ./ --contract UnstoppableBasicEchidna`\
+`forge test --match-contract UnstoppableBasicFoundry`
 
-`medusa --config test/02-unstoppable/UnstoppableBasicMedusa.json fuzz`
-
-`forge test --match-contract UnstoppableBasicFoundry`\
 `forge test --match-contract UnstoppableAdvancedFoundry`
 
 Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Medusa in `basic` configuration can always break both invariants and achieves this much faster than Echidna, making Medusa the clear winner.
