@@ -6,7 +6,7 @@ A comparison of solidity fuzzing tools Foundry, Echidna & Medusa.
 
 Install a more [recent](https://github.com/crytic/echidna/actions/runs/6747387119) build of Echidna which appears to work fine with Solidity 0.8.23.
 
-Compile the [latest](https://github.com/crytic/medusa) Medusa code from source as it is experimental and under active development.
+Compile the [latest](https://github.com/crytic/medusa) Medusa source code as it is experimental and under active development.
 
 Configure [solc-select](https://github.com/crytic/solc-select) for Echidna & Medusa:
 
