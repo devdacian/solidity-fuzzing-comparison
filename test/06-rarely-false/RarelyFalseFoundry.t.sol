@@ -5,6 +5,10 @@ import "forge-std/Test.sol";
 
 // run from base project directory with:
 // forge test --match-contract RarelyFalseFoundry
+//
+// get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
+// forge coverage --report lcov --report-file test/06-rarely-false/coverage-foundry-basic.lcov --match-contract RarelyFalseFoundry
+
 contract RarelyFalseFoundry is Test {
 
     uint256 constant private OFFSET = 1234;
