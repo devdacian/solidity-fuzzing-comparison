@@ -6,8 +6,11 @@ import "./NaiveReceiverBasicFoundry.t.sol";
 // run from base project directory with:
 // forge test --match-contract NaiveReceiverAdvancedFoundry
 //
-// get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
-// forge coverage --report lcov --report-file test/01-naive-receiver/coverage-foundry-advanced.lcov --match-contract NaiveReceiverAdvancedFoundry
+// get coverage report (see https://medium.com/@rohanzarathustra/forge-coverage-overview-744d967e112f):
+// 1) forge coverage --report lcov --report-file test/01-naive-receiver/coverage-foundry-advanced.lcov --match-contract NaiveReceiverAdvancedFoundry
+// 2) genhtml test/01-naive-receiver/coverage-foundry-advanced.lcov -o test/01-naive-receiver/coverage-foundry-advanced
+// 3) open test/01-naive-receiver/coverage-foundry-advanced/index.html in your browser and
+//    navigate to the relevant source file to see line-by-line execution records
 contract NaiveReceiverAdvancedFoundry is NaiveReceiverBasicFoundry {
 
     function setUp() public override {

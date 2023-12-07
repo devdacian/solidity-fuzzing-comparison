@@ -9,6 +9,12 @@ import "forge-std/Test.sol";
 
 // run from base project directory with:
 // forge test --match-contract UnstoppableBasicFoundry
+//
+// get coverage report (see https://medium.com/@rohanzarathustra/forge-coverage-overview-744d967e112f):
+// 1) forge coverage --report lcov --report-file test/02-unstoppable/coverage-foundry-basic.lcov --match-contract UnstoppableBasicFoundry
+// 2) genhtml test/02-unstoppable/coverage-foundry-basic.lcov -o test/02-unstoppable/coverage-foundry-basic
+// 3) open test/02-unstoppable/coverage-foundry-basic/index.html in your browser and
+//    navigate to the relevant source file to see line-by-line execution records
 contract UnstoppableBasicFoundry is Test {
 
     // initial tokens in pool

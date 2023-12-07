@@ -5,6 +5,12 @@ import "./UnstoppableBasicFoundry.t.sol";
 
 // run from base project directory with:
 // forge test --match-contract UnstoppableAdvancedFoundry
+//
+// get coverage report (see https://medium.com/@rohanzarathustra/forge-coverage-overview-744d967e112f):
+// 1) forge coverage --report lcov --report-file test/02-unstoppable/coverage-foundry-advanced.lcov --match-contract UnstoppableAdvancedFoundry
+// 2) genhtml test/02-unstoppable/coverage-foundry-advanced.lcov -o test/02-unstoppable/coverage-foundry-advanced
+// 3) open test/02-unstoppable/coverage-foundry-advanced/index.html in your browser and
+//    navigate to the relevant source file to see line-by-line execution records
 contract UnstoppableAdvancedFoundry is UnstoppableBasicFoundry {
 
     function setUp() public override {

@@ -9,8 +9,11 @@ import "forge-std/Test.sol";
 // run from base project directory with:
 // forge test --match-contract NaiveReceiverBasicFoundry
 //
-// get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
-// forge coverage --report lcov --report-file test/01-naive-receiver/coverage-foundry-basic.lcov --match-contract NaiveReceiverBasicFoundry
+// get coverage report (see https://medium.com/@rohanzarathustra/forge-coverage-overview-744d967e112f):
+// 1) forge coverage --report lcov --report-file test/01-naive-receiver/coverage-foundry-basic.lcov --match-contract NaiveReceiverBasicFoundry
+// 2) genhtml test/01-naive-receiver/coverage-foundry-basic.lcov -o test/01-naive-receiver/coverage-foundry-basic
+// 3) open test/01-naive-receiver/coverage-foundry-basic/index.html in your browser and
+//    navigate to the relevant source file to see line-by-line execution records
 contract NaiveReceiverBasicFoundry is Test {
 
     // initial eth flash loan pool
