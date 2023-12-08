@@ -43,18 +43,20 @@ contract UnstoppableBasicEchidna {
 
         // basic test with no advanced guiding of the fuzzer
         // Echidna frequently breaks the generic invariant and the more
-        // specific invariant with no guidance. Same with Medusa!
+        // specific invariant with no guidance.
+        // Medusa always breaks both invariants and achieves this quicker
+        // than Echidna!
     }
 
     // invariant #1 very generic but Echidna can still break it even
     // if this is the only invariant
-    function echidna_receiver_can_take_flash_loan() public returns (bool) {
+    function invariant_receiver_can_take_flash_loan() public returns (bool) {
         receiver.executeFlashLoan(10);
         return true;
     }
 
     // invariant #2 is more specific and Echidna can easily break it
-    function echidna_pool_bal_equal_token_pool_bal() public view returns(bool) {
+    function invariant_pool_bal_equal_token_pool_bal() public view returns(bool) {
         return(pool.poolBalance() == token.balanceOf(address(pool)));
     }
 }

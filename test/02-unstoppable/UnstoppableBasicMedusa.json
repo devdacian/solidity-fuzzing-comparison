@@ -47,7 +47,7 @@
 				"enabled": true,
 				"_COMMENT_TESTING_6": "changed prefix to use existing Echidna test files",
 				"testPrefixes": [
-					"echidna_"
+					"invariant_"
 				]
 			},
 			"optimizationTesting": {

@@ -12,3 +12,6 @@ allContracts: false
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
 corpusDir: "./test/01-naive-receiver/coverage-echidna-advanced"
+
+# use same prefix as Foundry invariant tests
+prefix: "invariant_"

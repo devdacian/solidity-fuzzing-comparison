@@ -45,13 +45,13 @@ contract NaiveReceiverBasicEchidna {
     //
     // 1) receiver's balance is not 0
     // breaking this invariant is very valuable but much harder
-    function echidna_receiver_balance_not_zero() public view returns (bool) {
+    function invariant_receiver_balance_not_zero() public view returns (bool) {
         return(address(receiver).balance != 0);
     }
 
     // 2) receiver's balance is not less than starting balance
     // breaking this invariant is less valuable but much easier
-    function echidna_receiver_balance_not_less_initial() public view returns (bool) {
+    function invariant_receiver_balance_not_less_initial() public view returns (bool) {
        return(address(receiver).balance >= INIT_ETH_RECEIVER);
     }
 
