@@ -1,0 +1,12 @@
+# no eth required
+balanceContract: 0
+
+# Allow fuzzer to use public/external functions from all contracts
+allContracts: false
+
+# using assertion mode
+testMode: "assertion"
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/07-byte-battle/coverage-echidna-basic"
