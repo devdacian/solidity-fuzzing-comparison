@@ -16,3 +16,10 @@ docs/
 
 # test coverage files
 **/coverage**
+
+src/04*
+src/08*
+test/03*
+test/04*
+test/05*
+test/08*
