@@ -6,6 +6,7 @@ libs = ["lib"]
 # include remappings
 remappings = [
     "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
 ]
 
 [fuzz]
