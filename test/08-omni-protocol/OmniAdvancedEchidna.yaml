@@ -1,0 +1,24 @@
+# no eth required
+balanceContract: 0
+
+# constraint fuzzer as we are using handlers
+allContracts: false
+
+# specify address to use for fuzz transactions
+sender: ["0x1000000000000000000000000000000000000000", "0x2000000000000000000000000000000000000000"]
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/08-omni-protocol/coverage-echidna-advanced"
+
+# changed prefix
+prefix: "medusa_"
+
+# increase number of works to speed up test
+workers: 10
+
+# limit attempts to shrink broken invariant transaction chain
+shrinkLimit: 500
+
+# increase test limit to give fuzzer approx 5 minutes
+testLimit: 150000
