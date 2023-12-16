@@ -59,10 +59,10 @@ In `basic` configuration Foundry & Echidna can only break the easier and more va
 
 Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge, while Medusa is able to break it almost instantly.
 
-### Challenge #7 Byte Battle: (WINNER TIED FOUNDRY & ECHIDNA)
+### Challenge #7 Byte Battle: (Winner TIED FOUNDRY & ECHIDNA)
 
 Foundry & Echidna are able to break the assertion in this stateless fuzzing challenge, but Medusa is unable to break it.
 
-### Challenge #8 Omni Protocol: (WINNER MEDUSA)
+### Challenge #8 Omni Protocol: (Winner MEDUSA)
 
 All 3 Fuzzers configured in `advanced` guided mode attempted to break 16 invariants on Beta Finance [Omni Protocol](https://github.com/beta-finance/Omni-Protocol). Medusa is typically able to break 2 invariants within 5 minutes (often much sooner on subsequent runs) though on the first run can take a bit longer. Echidna can sometimes break 1 invariant within 5 minutes and Foundry appears to never be able to break any invariants within 5 minutes. Hence Medusa is the clear winner. The fuzzers written for this challenge were [contributed](https://github.com/beta-finance/Omni-Protocol/pull/2) to Beta Finance.
