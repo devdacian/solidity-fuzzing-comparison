@@ -1,0 +1,19 @@
+# 10 ether is placed in the echidna testing contract
+# which then transfers ether to contracts being tested
+# as part of setup in constructor. Constructor must be
+# payable! This value should be in 18 decimals
+balanceContract: 10000000000000000000
+
+# Allow fuzzer to use public/external functions from all contracts
+allContracts: true
+
+# specify address to use for fuzz transations
+# limit this to the allowed voting addresses
+sender: ["0x1000000000000000000000000000000000000000", "0x2000000000000000000000000000000000000000", "0x3000000000000000000000000000000000000000", "0x4000000000000000000000000000000000000000", "0x5000000000000000000000000000000000000000"]
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/03-proposal/coverage-echidna-basic"
+
+# use same prefix as Foundry invariant tests
+prefix: "invariant_"
