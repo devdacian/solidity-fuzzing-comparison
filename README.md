@@ -45,7 +45,7 @@ Echidna in `basic` configuration can frequently break both invariants while Foun
 
 ### Challenge #3 Proposal: (Winner TIED ALL) ###
 
-Both Foundry & Echidna in `basic` mode are able to easily break the invariant, resulting in a tie. Medusa is unable to be used for this challenge as it requires a feature currently under development. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
+Both Foundry & Echidna in `basic` mode are able to easily break the invariant, resulting in a tie. Medusa is unable to be used for this challenge as it requires a feature currently under development.
 
 ### Challenge #4 Voting NFT: (Winner TIED ALL) ###
 
