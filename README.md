@@ -6,7 +6,7 @@ A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [
 
 Ensure you are using a recent version of [Foundry](https://github.com/foundry-rs/foundry) which includes [PR6530](https://github.com/foundry-rs/foundry/pull/6530). 
 
-Install a more [recent](https://github.com/crytic/echidna/actions/runs/7540881769) build of Echidna which appears to work fine with Solidity 0.8.23.
+Install a more [recent](https://github.com/crytic/echidna/actions/runs/7623460304) build of Echidna.
 
 Compile the [latest](https://github.com/crytic/medusa) Medusa source code as it is experimental and under active development.
 
