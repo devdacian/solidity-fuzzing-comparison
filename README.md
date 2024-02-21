@@ -25,21 +25,9 @@ Every exercise has a `basic` some optionally an `advanced` fuzz configuration fo
 
 ### Challenge #1 Naive Receiver: (Winner TIED ALL) ###
 
-`echidna --config test/01-naive-receiver/NaiveReceiverBasicEchidna.yaml ./ --contract NaiveReceiverBasicEchidna`\
-`forge test --match-contract NaiveReceiverBasicFoundry`
-
-`echidna --config test/01-naive-receiver/NaiveReceiverAdvancedEchidna.yaml ./ --contract NaiveReceiverAdvancedEchidna`\
-`forge test --match-contract NaiveReceiverAdvancedFoundry`
-
 In `basic` configuration both Foundry & Echidna are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration both Foundry & Echidna can break both invariants. Both Foundry & Echidna reduce the exploit chain to a very concise & optimized transaction set and present this to the user in an easy to understand output. As a result they are tied and there is no clear winner. Medusa is unable to be used for this challenge as it requires a feature currently under development.
 
 ### Challenge #2 Unstoppable: (Winner MEDUSA) ###
-
-`medusa --config test/02-unstoppable/UnstoppableBasicMedusa.json fuzz`\
-`echidna --config test/02-unstoppable/UnstoppableBasicEchidna.yaml ./ --contract UnstoppableBasicEchidna`\
-`forge test --match-contract UnstoppableBasicFoundry`
-
-`forge test --match-contract UnstoppableAdvancedFoundry`
 
 Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Medusa in `basic` configuration can always break both invariants and achieves this much faster than Echidna, making Medusa the clear winner.
 
