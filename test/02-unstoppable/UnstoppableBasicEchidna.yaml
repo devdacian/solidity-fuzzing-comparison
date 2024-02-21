@@ -13,3 +13,6 @@ corpusDir: "./test/02-unstoppable/coverage-echidna-basic"
 
 # use same prefix as Foundry invariant tests
 prefix: "invariant_"
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]

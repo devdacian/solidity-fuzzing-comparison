@@ -10,7 +10,8 @@
 		"corpusDirectory": "coverage-medusa-advanced",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"deploymentOrder": ["OmniAdvancedMedusa"],
+		"targetContracts": ["OmniAdvancedMedusa"],
+		"targetContractsBalances": [],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
 		"_COMMENT_TESTING_3": "changed senderAddresses to use custom senders",
@@ -75,7 +76,7 @@
 			"target": "./../../.",
 			"solcVersion": "",
 			"exportDirectory": "",
-			"args": []
+			"args": ["--foundry-compile-all"]
 		}
 	},
 	"logging": {

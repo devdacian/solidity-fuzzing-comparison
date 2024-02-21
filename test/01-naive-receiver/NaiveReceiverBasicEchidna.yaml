@@ -13,3 +13,6 @@ corpusDir: "./test/01-naive-receiver/coverage-echidna-basic"
 
 # use same prefix as Foundry invariant tests
 prefix: "invariant_"
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]

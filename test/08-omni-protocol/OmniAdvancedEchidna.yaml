@@ -22,3 +22,6 @@ shrinkLimit: 500
 
 # increase test limit to give fuzzer approx 5 minutes
 testLimit: 150000
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]

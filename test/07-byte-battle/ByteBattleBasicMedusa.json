@@ -10,7 +10,8 @@
 		"corpusDirectory": "coverage-medusa-basic",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"deploymentOrder": ["ByteBattleBasicEchidna"],
+		"targetContracts": ["ByteBattleBasicEchidna"],
+		"targetContractsBalances": [],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
 		"_COMMENT_TESTING_3": "changed senderAddresses to use custom senders",
@@ -71,7 +72,7 @@
 			"target": "./../../.",
 			"solcVersion": "",
 			"exportDirectory": "",
-			"args": []
+			"args": ["--foundry-compile-all"]
 		}
 	},
 	"logging": {

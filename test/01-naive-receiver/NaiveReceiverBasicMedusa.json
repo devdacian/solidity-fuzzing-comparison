@@ -10,7 +10,8 @@
 		"corpusDirectory": "coverage-medusa-basic",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"deploymentOrder": ["NaiveReceiverBasicEchidna"],
+		"targetContracts": ["NaiveReceiverBasicEchidna"],
+		"targetContractsBalances": ["0x000000000000000000000000000000000000000000000036c090d0ca68880000"],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
 		"_COMMENT_TESTING_4": "changed senderAddresses to use permissionless attacker address",
@@ -72,7 +73,7 @@
 			"target": "./../../.",
 			"solcVersion": "",
 			"exportDirectory": "",
-			"args": []
+			"args": ["--foundry-compile-all"]
 		}
 	},
 	"logging": {

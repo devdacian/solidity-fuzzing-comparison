@@ -10,3 +10,6 @@ testMode: "assertion"
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
 corpusDir: "./test/07-byte-battle/coverage-echidna-basic"
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]
