@@ -25,7 +25,7 @@ Every exercise has a `basic` some optionally an `advanced` fuzz configuration fo
 
 ### Challenge #1 Naive Receiver: (Winner TIED ALL) ###
 
-In `basic` configuration both Foundry & Echidna are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration both Foundry & Echidna can break both invariants. Both Foundry & Echidna reduce the exploit chain to a very concise & optimized transaction set and present this to the user in an easy to understand output. As a result they are tied and there is no clear winner. Medusa is unable to be used for this challenge as it requires a feature currently under development.
+In `basic` configuration Foundry, Echidna & Medusa are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration all 3 fuzzers can break both invariants. All 3 fuzzers reduce the exploit chain to a very concise & optimized transaction set and present this to the user in an easy to understand output. As a result they are tied and there is no clear winner.
 
 ### Challenge #2 Unstoppable: (Winner MEDUSA) ###
 
@@ -33,7 +33,7 @@ Echidna in `basic` configuration can frequently break both invariants while Foun
 
 ### Challenge #3 Proposal: (Winner TIED ALL) ###
 
-Both Foundry & Echidna in `basic` mode are able to easily break the invariant, resulting in a tie. Medusa is unable to be used for this challenge as it requires a feature currently under development.
+Foundry, Echidna & Medusa in `basic` mode are able to easily break the invariant, resulting in a tie.
 
 ### Challenge #4 Voting NFT: (Winner TIED ALL) ###
 
@@ -43,9 +43,9 @@ In `basic` configuration Foundry, Echidna & Medusa are all able to break the eas
 
 In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
 
-### Challenge #6 Rarely False: (Winner MEDUSA) ###
+### Challenge #6 Rarely False: (Winner NONE) ###
 
-Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge, while Medusa is able to break it almost instantly.
+Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge. Medusa [used](https://twitter.com/DevDacian/status/1732199452344221913) to be able to break it almost instantly but has [regressed](https://github.com/crytic/medusa/issues/305) in performance after recent changes and is now unable to break it. Hence there is no current winner.
 
 ### Challenge #7 Byte Battle: (Winner TIED FOUNDRY & ECHIDNA)
 
