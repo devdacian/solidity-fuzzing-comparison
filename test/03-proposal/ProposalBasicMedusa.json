@@ -11,7 +11,7 @@
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
 		"targetContracts": ["ProposalBasicEchidna"],
-		"targetContractsBalances": ["0x0000000000000000000000000000000000000000000000008ac7230489e80000"],
+		"targetContractsBalances": ["0x8ac7230489e80000"],
 		"constructorArgs": {},
 		"deployerAddress": "0x99999",
 		"_COMMENT_TESTING_3": "changed senderAddresses to use custom senders",
