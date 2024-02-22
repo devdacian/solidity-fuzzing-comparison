@@ -8,6 +8,7 @@ import "./NaiveReceiverBasicEchidna.t.sol";
 //
 // run from base project directory with:
 // echidna --config test/01-naive-receiver/NaiveReceiverAdvancedEchidna.yaml ./ --contract NaiveReceiverAdvancedEchidna
+// medusa --config test/01-naive-receiver/NaiveReceiverAdvancedMedusa.json fuzz
 contract NaiveReceiverAdvancedEchidna is NaiveReceiverBasicEchidna {
 
     // constructor has to be payable if balanceContract > 0 in yaml config

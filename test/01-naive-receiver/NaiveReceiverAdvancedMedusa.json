@@ -10,7 +10,7 @@
 		"corpusDirectory": "coverage-medusa-basic",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"targetContracts": ["NaiveReceiverBasicEchidna"],
+		"targetContracts": ["NaiveReceiverAdvancedEchidna"],
 		"targetContractsBalances": ["0x36c090d0ca68880000"],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
