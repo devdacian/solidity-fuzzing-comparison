@@ -49,7 +49,7 @@ Both Echidna & Foundry are unable to break the assertion in this stateless fuzzi
 
 ### Challenge #7 Byte Battle: (Winner TIED FOUNDRY & ECHIDNA)
 
-Foundry & Echidna are able to break the assertion in this stateless fuzzing challenge, but Medusa is unable to break it.
+Foundry & Echidna are able to break the assertion in this stateless fuzzing challenge, but Medusa is [unable](https://github.com/crytic/medusa/issues/307) to break it.
 
 ### Challenge #8 Omni Protocol: (Winner MEDUSA)
 
