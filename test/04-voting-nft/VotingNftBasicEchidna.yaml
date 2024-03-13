@@ -1,0 +1,20 @@
+# no eth required
+balanceContract: 0
+
+# Allow fuzzer to use public/external functions from all contracts
+allContracts: true
+
+# specify address to use for fuzz transactions; for this test
+# we want only one sender who has no assets or permissions on
+# the contract being fuzzed; a permission-less attacker
+sender: ["0x1337000000000000000000000000000000000000"]
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/04-voting-nft/coverage-echidna-basic"
+
+# use same prefix as Foundry invariant tests
+prefix: "invariant_"
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]

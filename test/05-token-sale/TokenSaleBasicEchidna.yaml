@@ -1,0 +1,19 @@
+# no eth required
+balanceContract: 0
+
+# Allow fuzzer to use public/external functions from all contracts
+allContracts: true
+
+# specify address to use for fuzz transations
+# limit this to the allowed buyer addresses
+sender: ["0x1000000000000000000000000000000000000000", "0x2000000000000000000000000000000000000000", "0x3000000000000000000000000000000000000000", "0x4000000000000000000000000000000000000000", "0x5000000000000000000000000000000000000000"]
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/05-token-sale/coverage-echidna-basic"
+
+# use same prefix as Foundry invariant tests
+prefix: "invariant_"
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]
