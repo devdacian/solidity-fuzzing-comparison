@@ -7,6 +7,7 @@ libs = ["lib"]
 remappings = [
     "@openzeppelin/=lib/openzeppelin-contracts/",
     "@openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "@chimera/=lib/chimera/src/",
 ]
 
 [fuzz]
