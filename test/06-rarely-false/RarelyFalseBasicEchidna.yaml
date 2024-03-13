@@ -7,6 +7,12 @@ allContracts: false
 # using assertion mode
 testMode: "assertion"
 
+# increase number of works to speed up test
+workers: 10
+
+# increase test limit to around 1 minute
+testLimit: 10000000
+
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
 corpusDir: "./test/06-rarely-false/coverage-echidna-basic"

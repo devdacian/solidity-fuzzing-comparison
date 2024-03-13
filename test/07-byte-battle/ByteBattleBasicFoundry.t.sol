@@ -10,7 +10,6 @@ import {Test} from "forge-std/Test.sol";
 //
 // get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
 // forge coverage --report lcov --report-file test/07-byte-battle/coverage-foundry-basic.lcov --match-contract ByteBattleBasicFoundry
-
 contract ByteBattleBasicFoundry is Test, ByteBattleTargetFunctions, FoundryAsserts {
 
 }
