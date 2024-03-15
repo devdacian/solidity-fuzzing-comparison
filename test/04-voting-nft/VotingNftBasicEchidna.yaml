@@ -9,12 +9,18 @@ allContracts: true
 # the contract being fuzzed; a permission-less attacker
 sender: ["0x1337000000000000000000000000000000000000"]
 
+# common invariant prefix
+prefix: "property_"
+
+# increase number of works to speed up test
+workers: 10
+
+# increase test limit to around 1 minute
+testLimit: 3300000
+
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
 corpusDir: "./test/04-voting-nft/coverage-echidna-basic"
-
-# use same prefix as Foundry invariant tests
-prefix: "invariant_"
 
 # instruct foundry to compile tests
 cryticArgs: ["--foundry-compile-all"]

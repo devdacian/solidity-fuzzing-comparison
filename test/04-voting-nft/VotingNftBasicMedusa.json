@@ -2,15 +2,15 @@
 	"fuzzing": {
 		"workers": 10,
 		"workerResetLimit": 50,
-		"_COMMENT_TESTING_1": "changed timeout to limit fuzzing time",
-		"timeout": 10,
+		"_COMMENT_TESTING_1": "changed timeout to give fuzzer 1 minute",
+		"timeout": 60,
 		"testLimit": 0,
 		"callSequenceLength": 100,
 		"_COMMENT_TESTING_8": "added directory to store coverage data",
 		"corpusDirectory": "coverage-medusa-basic",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"targetContracts": ["VotingNftBasicEchidna"],
+		"targetContracts": ["VotingNftBasicCrytic"],
 		"targetContractsBalances": [],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
@@ -30,7 +30,7 @@
 			"traceAll": false,
 			"assertionTesting": {
 				"enabled": false,
-				"testViewMethods": false,
+				"testViewMethods": true,
 				"assertionModes": {
 					"failOnCompilerInsertedPanic": false,
 					"failOnAssertion": true,
@@ -46,9 +46,8 @@
 			},
 			"propertyTesting": {
 				"enabled": true,
-				"_COMMENT_TESTING_6": "changed prefix to use existing Echidna test files",
 				"testPrefixes": [
-					"invariant_"
+					"property_"
 				]
 			},
 			"optimizationTesting": {
