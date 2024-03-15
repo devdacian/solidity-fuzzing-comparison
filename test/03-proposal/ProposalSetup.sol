@@ -1,16 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
-import "../../src/03-proposal/Proposal.sol";
+import {Proposal} from "../../src/03-proposal/Proposal.sol";
+import {BaseSetup} from "@chimera/BaseSetup.sol";
 
-// configure solc-select to use compiler version:
-// solc-select use 0.8.23 
-//
-// run from base project directory with:
-// echidna --config test/03-proposal/ProposalBasicEchidna.yaml ./ --contract ProposalBasicEchidna
-// medusa --config test/03-proposal/ProposalBasicMedusa.json fuzz
-// note: medusa not working yet as it doesn't support configuring initial eth balance
-contract ProposalBasicEchidna {
+abstract contract ProposalSetup is BaseSetup {
 
     // eth reward
     uint256 constant ETH_REWARD = 10e18;
@@ -21,8 +15,7 @@ contract ProposalBasicEchidna {
     // contracts required for test
     Proposal prop;
 
-    // constructor has to be payable if balanceContract > 0 in yaml config
-    constructor() payable {
+    function setup() internal override {
         // this contract given ETH_REWARD in yaml config
 
         // setup the allowed list of voters
@@ -51,34 +44,8 @@ contract ProposalBasicEchidna {
 
         // constrain fuzz test senders to the set of allowed voting addresses
         // done in yaml config
-
-        // basic test with no advanced guiding of the fuzzer
-        // Echidna is easily able to break the invariant!
     }
 
     // required to receive refund if proposal fails
     receive() external payable {}
-
-    // event to raise if invariant broken to see interesting state
-    event ProposalBalance(uint256 balance);
-
-    // once the proposal has completed, all the eth should be distributed
-    // either to the owner if the proposal failed or to the winners if
-    // the proposal succeeded. no eth should remain forever stuck in the
-    // contract
-    function invariant_proposal_complete_all_rewards_distributed() public returns(bool) {
-        uint256 proposalBalance = address(prop).balance;
-
-        // only visible when invariant fails
-        emit ProposalBalance(proposalBalance);
-
-        return(
-            // either proposal is active and contract balance > 0 
-            (prop.isActive() && proposalBalance > 0) ||
-
-            // or proposal is not active and contract balance == 0
-            (!prop.isActive() && proposalBalance == 0)
-        );
-    }
-
 }

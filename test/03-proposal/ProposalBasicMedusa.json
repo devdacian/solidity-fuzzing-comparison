@@ -10,7 +10,7 @@
 		"corpusDirectory": "coverage-medusa-basic",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"targetContracts": ["ProposalBasicEchidna"],
+		"targetContracts": ["ProposalBasicCrytic"],
 		"targetContractsBalances": ["0x8ac7230489e80000"],
 		"constructorArgs": {},
 		"deployerAddress": "0x99999",
@@ -52,7 +52,7 @@
 				"enabled": true,
 				"_COMMENT_TESTING_6": "changed prefix to use existing Echidna test files",
 				"testPrefixes": [
-					"invariant_"
+					"property_"
 				]
 			},
 			"optimizationTesting": {

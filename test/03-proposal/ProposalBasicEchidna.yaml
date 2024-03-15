@@ -15,8 +15,8 @@ sender: ["0x1000000000000000000000000000000000000000", "0x2000000000000000000000
 # fuzzer executes
 corpusDir: "./test/03-proposal/coverage-echidna-basic"
 
-# use same prefix as Foundry invariant tests
-prefix: "invariant_"
+# common invariant prefix
+prefix: "property_"
 
 # instruct foundry to compile tests
 cryticArgs: ["--foundry-compile-all"]
