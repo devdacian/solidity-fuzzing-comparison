@@ -1,0 +1,13 @@
+# don't allow fuzzer to use all functions
+# since we are using handlers
+allContracts: false
+
+# record fuzzer coverage to see what parts of the code
+# fuzzer executes
+corpusDir: "./test/09-vesting/coverage-echidna"
+
+# prefix of invariant function
+prefix: "property_"
+
+# instruct foundry to compile tests
+cryticArgs: ["--foundry-compile-all"]
