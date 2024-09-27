@@ -47,6 +47,7 @@ contract Vesting {
         require(!fromAllocation.claimed, "Already claimed");
 
         AllocationData memory toAllocation = allocations[to];
+        require(!toAllocation.claimed, "Already claimed");
 
         // enforce identical vesting periods if `to` has an active vesting period
         if(toAllocation.vestingWeeks != 0) {
