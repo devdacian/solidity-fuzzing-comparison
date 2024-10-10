@@ -2,8 +2,8 @@
 pragma solidity ^0.8.23;
 
 import "@openzeppelin-upgradeable/contracts/access/AccessControlUpgradeable.sol";
-import "@openzeppelin-upgradeable/contracts/security/ReentrancyGuardUpgradeable.sol";
-import "@openzeppelin-upgradeable/contracts/security/PausableUpgradeable.sol";
+import "@openzeppelin-upgradeable/contracts/utils/ReentrancyGuardUpgradeable.sol";
+import "@openzeppelin-upgradeable/contracts/utils/PausableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/math/Math.sol";
 
 import "./interfaces/IOmniOracle.sol";
@@ -64,9 +64,9 @@ contract OmniPool is IOmniPool, AccessControlUpgradeable, ReentrancyGuardUpgrade
         oracle = _oracle;
         pauseTranche = type(uint8).max;
         reserveReceiver = _reserveReceiver.toAccount(0);
-        _setupRole(DEFAULT_ADMIN_ROLE, _admin); // Additionally set up other roles?
-        _setupRole(SOFT_LIQUIDATION_ROLE, _admin);
-        _setupRole(MARKET_CONFIGURATOR_ROLE, _admin);
+        _grantRole(DEFAULT_ADMIN_ROLE, _admin); // Additionally set up other roles?
+        _grantRole(SOFT_LIQUIDATION_ROLE, _admin);
+        _grantRole(MARKET_CONFIGURATOR_ROLE, _admin);
     }
 
     /**

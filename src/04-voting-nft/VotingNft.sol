@@ -73,7 +73,7 @@ contract VotingNft is ERC721, Ownable {
         uint256 maxNftPower,
         uint256 nftPowerReductionPercent) 
         ERC721("VNFT", "VNFT")
-        Ownable() {
+        Ownable(msg.sender) {
 
         // input sanity checks
         require(requiredCollateral > 0, "VNFT: required collateral must be > 0");
@@ -174,20 +174,15 @@ contract VotingNft is ERC721, Ownable {
     }
 
     // make sure to recalculate nft power if these nfts are transferred
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 tokenId,
-        uint256 batchSize
-    ) internal override {
-        super._beforeTokenTransfer(from, to, tokenId, batchSize);
-
+    function _update(address to, uint256 tokenId, address auth) internal override returns (address) {
         // if users have collateral deposited for their nfts when they transfer
         // them to another user, the other users effectively becomes the owner
         // of the collateral. The nfts are mostly worthless without the collateral since
         // their voting power drops without it, so by design the deposited
         // collateral moves with the nfts
         recalculateNftPower(tokenId);
+
+        return super._update(to, tokenId, auth);
     }
 
     // bunch of getter functions
@@ -216,14 +211,14 @@ contract VotingNft is ERC721, Ownable {
     }
 
     function getDepositedCollateral(uint256 tokenId) public view returns (uint256) {
-        _requireMinted(tokenId);
+        _requireOwned(tokenId);
 
         return s_nftInfo[tokenId].currentCollateral;
     }
 
     function getNftPower(uint256 tokenId) public view returns (uint256) {
         // ensure token has already been minted
-        _requireMinted(tokenId);
+        _requireOwned(tokenId);
 
         if (block.timestamp <= s_powerCalcTimestamp) {
             return 0;

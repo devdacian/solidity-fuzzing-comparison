@@ -31,7 +31,7 @@ contract OmniOracle is IOmniOracle, AccessControl, Initializable {
      * @param _admin The address of the multisig admin.
      */
     function initialize(address _admin) external initializer {
-        _setupRole(DEFAULT_ADMIN_ROLE, _admin);
+        _grantRole(DEFAULT_ADMIN_ROLE, _admin);
     }
 
     /**

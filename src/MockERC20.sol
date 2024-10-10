@@ -9,8 +9,8 @@ contract MockERC20 is AccessControl, ERC20 {
     uint8 private __decimals = 18;
 
     constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) {
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _setupRole(MINTER_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(MINTER_ROLE, msg.sender);
     }
 
     function decimals() public view override returns (uint8) {

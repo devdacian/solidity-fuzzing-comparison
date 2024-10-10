@@ -11,8 +11,8 @@ contract MockOracle is AccessControl, IOmniOracle {
     mapping(address => uint256) public prices;
 
     constructor() {
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _setupRole(UPDATER_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(UPDATER_ROLE, msg.sender);
     }
 
     function setPrices(address[] calldata _underlyings, uint256[] calldata _prices) external onlyRole(UPDATER_ROLE) {

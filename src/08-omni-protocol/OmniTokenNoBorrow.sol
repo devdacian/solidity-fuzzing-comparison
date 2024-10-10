@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity ^0.8.23;
 
-import "@openzeppelin-upgradeable/contracts/security/ReentrancyGuardUpgradeable.sol";
+import "@openzeppelin-upgradeable/contracts/utils/ReentrancyGuardUpgradeable.sol";
 
 import "./interfaces/IOmniPool.sol";
 import "./interfaces/IOmniTokenNoBorrow.sol";

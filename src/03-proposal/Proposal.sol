@@ -202,7 +202,7 @@ contract Proposal {
                 // the last voter can get 1 wei more than the rest - this is not
                 // a valid finding, it is simply how we deal with imperfect division
                 if(i == totalVotesFor-1) {
-                    rewardPerVoter = Math.mulDiv(totalRewards, 1, totalVotes, Math.Rounding.Up);
+                    rewardPerVoter = Math.mulDiv(totalRewards, 1, totalVotes, Math.Rounding.Ceil);
                 }
                 _sendEth(s_votersFor[i], rewardPerVoter);
             }
