@@ -2,9 +2,9 @@
 pragma solidity ^0.8.23;
 
 import {Asserts} from "@chimera/Asserts.sol";
-import {ProposalSetup} from "./ProposalSetup.sol";
+import {Setup} from "./Setup.sol";
 
-abstract contract ProposalProperties is ProposalSetup, Asserts {
+abstract contract Properties is Setup, Asserts {
 
     // event to raise if invariant broken to see interesting state
     event ProposalBalance(uint256 balance);

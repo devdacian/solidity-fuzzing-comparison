@@ -4,7 +4,7 @@ pragma solidity ^0.8.23;
 import {Proposal} from "../../src/03-proposal/Proposal.sol";
 import {BaseSetup} from "@chimera/BaseSetup.sol";
 
-abstract contract ProposalSetup is BaseSetup {
+abstract contract Setup is BaseSetup {
 
     // eth reward
     uint256 constant ETH_REWARD = 10e18;
