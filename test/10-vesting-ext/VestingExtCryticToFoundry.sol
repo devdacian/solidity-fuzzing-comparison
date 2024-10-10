@@ -38,7 +38,7 @@ contract VestingExtCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
     // wrap every "property_*" invariant function into
     // a Foundry-style "invariant_*" function
     function invariant_users_points_sum_eq_total_points() public {
-      assertTrue(property_users_points_sum_eq_total_points());
+      t(property_users_points_sum_eq_total_points(), "User points sum total points");
     }
 
     // TODO: wrap new "property_*" invariant into Foundry-style invariant
