@@ -4,7 +4,7 @@ pragma solidity ^0.8.23;
 import {Asserts} from "@chimera/Asserts.sol";
 
 // target functions to test
-abstract contract RarelyFalseTargetFunctions is Asserts {
+abstract contract TargetFunctions is Asserts {
 
     uint256 constant private OFFSET = 1234;
     uint256 constant private POW    = 80;
