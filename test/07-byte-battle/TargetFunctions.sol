@@ -4,7 +4,7 @@ pragma solidity ^0.8.23;
 import {Asserts} from "@chimera/Asserts.sol";
 
 // target functions to test
-abstract contract ByteBattleTargetFunctions is Asserts {
+abstract contract TargetFunctions is Asserts {
 
     // fuzzers call this function
     function test_ByteBattle(bytes32 a, bytes32 b) external {
