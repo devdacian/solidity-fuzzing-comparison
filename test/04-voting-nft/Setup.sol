@@ -4,7 +4,7 @@ pragma solidity ^0.8.23;
 import {VotingNftForFuzz} from "../../src/04-voting-nft/VotingNftForFuzz.sol";
 import {BaseSetup} from "@chimera/BaseSetup.sol";
 
-abstract contract VotingNftSetup is BaseSetup {
+abstract contract Setup is BaseSetup {
     uint256 constant requiredCollateral       = 100000000000000000000;
     uint256 constant maxNftPower              = 1000000000000000000000000000;
     uint256 constant nftPowerReductionPercent = 100000000000000000000000000;

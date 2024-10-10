@@ -2,9 +2,9 @@
 pragma solidity ^0.8.23;
 
 import {Asserts} from "@chimera/Asserts.sol";
-import {VotingNftSetup} from "./VotingNftSetup.sol";
+import {Setup} from "./Setup.sol";
 
-abstract contract VotingNftProperties is VotingNftSetup, Asserts {
+abstract contract Properties is Setup, Asserts {
     // two possible invariants in order of importance:
     //
     // 1) at power calculation timestamp, total voting power is not 0

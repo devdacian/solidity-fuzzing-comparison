@@ -10,7 +10,7 @@
 		"corpusDirectory": "coverage-medusa-basic",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
-		"targetContracts": ["VotingNftBasicCrytic"],
+		"targetContracts": ["VotingNftCryticTester"],
 		"targetContractsBalances": [],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
