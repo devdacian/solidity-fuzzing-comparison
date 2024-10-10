@@ -16,3 +16,6 @@ docs/
 
 # test coverage files
 **/coverage**
+
+# misc
+.DS_Store
