@@ -1,16 +1,21 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
-import { OperatorRegistry } from "../../src/11-op-reg/OperatorRegistry.sol";
+import { LiquidateDos } from "../../src/12-liquidate-dos/LiquidateDos.sol";
 import { BaseSetup } from "@chimera/BaseSetup.sol";
 
 abstract contract Setup is BaseSetup {
     // contract being tested
-    OperatorRegistry operatorRegistry;
+    LiquidateDos liquidateDos;
 
     // ghost variables
     address[] addressPool;
     uint8 internal ADDRESS_POOL_LENGTH;
+
+    // tracks open markets for each user, using different
+    // method than the underlying implementation
+    mapping(address user => uint8 activeMarketCount) userActiveMarketsCount;
+    mapping(address user => mapping(uint8 marketId => bool userInMarket)) userActiveMarkets;
 
     function setup() internal virtual override {
         addressPool.push(address(0x1111));
@@ -24,6 +29,6 @@ abstract contract Setup is BaseSetup {
         addressPool.push(address(0x9999));
         ADDRESS_POOL_LENGTH = uint8(addressPool.length);
 
-        operatorRegistry = new OperatorRegistry();
+        liquidateDos = new LiquidateDos();
     }
 }
