@@ -1,14 +1,12 @@
 # Solidity Fuzzing Challenge: Foundry vs Echidna vs Medusa #
 
-A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
+A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the primary goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
+
+Many of the challenges are simplified versions of audit findings from my private audits at [Cyfrin](https://www.cyfrin.io). These findings could have been found by the protocol developers themselves prior to an external audit if the protocol had written the correct fuzz testing invariants. Hence a secondary goal of this repo is to show developers how to write better fuzz testing invariants to improve their protocol security prior to engaging external auditors.
 
 ## Setup ##
 
-Ensure you are using a recent version of [Foundry](https://github.com/foundry-rs/foundry) which includes [PR6530](https://github.com/foundry-rs/foundry/pull/6530). 
-
-Install a more [recent](https://github.com/crytic/echidna/actions/runs/7623460304) build of Echidna.
-
-Compile the [latest](https://github.com/crytic/medusa) Medusa source code as it is experimental and under active development.
+Ensure you are using recent versions of [Foundry](https://github.com/foundry-rs/foundry), [Echidna](https://github.com/crytic/echidna) and [Medusa](https://github.com/crytic/medusa).
 
 Configure [solc-select](https://github.com/crytic/solc-select) for Echidna & Medusa:
 
@@ -19,7 +17,7 @@ To compile this project:
 
 `forge build`
 
-Every exercise has a `basic` some optionally an `advanced` fuzz configuration for Foundry, Echidna & Medusa. The `basic` configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The `advanced` configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
+Every exercise has a `basic` configuration and/or `advanced` fuzz configuration for Foundry, Echidna & Medusa. The `basic` configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The `advanced` configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
 
 ## Results ##
 
@@ -27,9 +25,9 @@ Every exercise has a `basic` some optionally an `advanced` fuzz configuration fo
 
 In `basic` configuration Foundry, Echidna & Medusa are able to break the simpler invariant but not the more valuable and difficult one. In `advanced` configuration all 3 fuzzers can break both invariants. All 3 fuzzers reduce the exploit chain to a very concise & optimized transaction set and present this to the user in an easy to understand output. As a result they are tied and there is no clear winner.
 
-### Challenge #2 Unstoppable: (Winner MEDUSA) ###
+### Challenge #2 Unstoppable: (Winner TIED ALL) ###
 
-Echidna in `basic` configuration can frequently break both invariants while Foundry in `basic` configuration can sometimes break the easier invariant but never the harder one. Foundry using `advanced` configuration is able to break both invariants if given an extreme amount of targeting. Medusa in `basic` configuration can always break both invariants and achieves this much faster than Echidna, making Medusa the clear winner.
+All Fuzzers in `basic` configuration can break both invariants; Foundry appears to be the slightly faster.
 
 ### Challenge #3 Proposal: (Winner TIED ALL) ###
 
@@ -41,7 +39,7 @@ In `basic` configuration Foundry, Echidna & Medusa are all able to break the eas
 
 ### Challenge #5 Token Sale: (Winner MEDUSA) ###
 
-In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
+In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner.
 
 ### Challenge #6 Rarely False: (Winner NONE) ###
 
