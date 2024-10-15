@@ -2,7 +2,7 @@
 
 A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the primary goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
 
-Many of the challenges are simplified versions of audit findings from my private audits at Cyfrin. These findings could have been found by the protocol developers themselves prior to an external audit if the protocol had written the correct fuzz testing invariants. Hence a secondary goal of this repo is to show developers how to write better fuzz testing invariants to improve their protocol security prior to engaging external auditors.
+Many of the challenges are simplified versions of audit findings from my private audits at [Cyfrin](https://www.cyfrin.io). These findings could have been found by the protocol developers themselves prior to an external audit if the protocol had written the correct fuzz testing invariants. Hence a secondary goal of this repo is to show developers how to write better fuzz testing invariants to improve their protocol security prior to engaging external auditors.
 
 ## Setup ##
 
