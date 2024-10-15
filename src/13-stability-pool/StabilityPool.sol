@@ -62,7 +62,7 @@ contract StabilityPool {
 
         uint256 compoundedDebtDeposit = getCompoundedDebtDeposit(msg.sender);
 
-        debtToken.transferFrom(msg.sender, address(this), _amount);
+        debtToken.safeTransferFrom(msg.sender, address(this), _amount);
 
         uint256 newTotalDebtTokenDeposits = totalDebtTokenDeposits + _amount;
         totalDebtTokenDeposits = newTotalDebtTokenDeposits;
