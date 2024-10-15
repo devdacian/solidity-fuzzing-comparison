@@ -1,6 +1,8 @@
 # Solidity Fuzzing Challenge: Foundry vs Echidna vs Medusa #
 
-A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
+A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the primary goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
+
+Many of the challenges are simplified versions of audit findings from my private audits at Cyfrin. These findings could have been found by the protocol developers themselves prior to an external audit if the protocol had written the correct fuzz testing invariants. Hence a secondary goal of this repo is to show developers how to write better fuzz testing invariants to improve their protocol security prior to engaging external auditors.
 
 ## Setup ##
 
@@ -15,7 +17,7 @@ To compile this project:
 
 `forge build`
 
-Every exercise has at least a `basic` configuration and some optionally an `advanced` fuzz configuration for Foundry, Echidna & Medusa. The `basic` configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The `advanced` configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
+Every exercise has a `basic` configuration and/or `advanced` fuzz configuration for Foundry, Echidna & Medusa. The `basic` configuration does not guide the fuzzer at all; it simply sets up the scenario and allows the fuzzer to do whatever it wants. The `advanced` configuration guides the fuzzer to the functions it should call and helps to eliminate invalid inputs which result in useless fuzz runs.
 
 ## Results ##
 
