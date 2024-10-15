@@ -5,6 +5,7 @@
 		"_COMMENT_TESTING_1": "changed timeout to limit fuzzing time",
 		"timeout": 10,
 		"testLimit": 0,
+		"shrinkLimit": 500,
 		"callSequenceLength": 100,
 		"_COMMENT_TESTING_8": "added directory to store coverage data",
 		"corpusDirectory": "coverage-medusa-basic",
@@ -31,7 +32,7 @@
 			"assertionTesting": {
 				"enabled": false,
 				"testViewMethods": false,
-				"assertionModes": {
+				"panicCodeConfig": {
 					"failOnCompilerInsertedPanic": false,
 					"failOnAssertion": true,
 					"failOnArithmeticUnderflow": false,

@@ -5,12 +5,14 @@
 		"_COMMENT_TESTING_1": "increase timeout to give fuzzer approx 5 minutes",
 		"timeout": 300,
 		"testLimit": 0,
+		"shrinkLimit": 500,
 		"callSequenceLength": 100,
 		"_COMMENT_TESTING_8": "added directory to store coverage data",
 		"corpusDirectory": "coverage-medusa-advanced",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
 		"targetContracts": ["OmniAdvancedMedusa"],
+		"predeployedContracts": {},
 		"targetContractsBalances": [],
 		"constructorArgs": {},
 		"deployerAddress": "0x30000",
@@ -34,7 +36,7 @@
 			"assertionTesting": {
 				"enabled": false,
 				"testViewMethods": false,
-				"assertionModes": {
+				"panicCodeConfig": {
 					"failOnCompilerInsertedPanic": false,
 					"failOnAssertion": true,
 					"failOnArithmeticUnderflow": false,
@@ -59,7 +61,9 @@
 				"testPrefixes": [
 					"optimize_"
 				]
-			}
+			},
+			"targetFunctionSignatures": [],
+			"excludeFunctionSignatures": []
 		},
 		"chainConfig": {
 			"codeSizeCheckDisabled": true,
