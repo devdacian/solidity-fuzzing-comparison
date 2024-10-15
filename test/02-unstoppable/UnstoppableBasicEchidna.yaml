@@ -1,6 +1,9 @@
 # no initial eth required
 balanceContract: 0
 
+# increase test limit
+testLimit: 100000
+
 # Allow fuzzer to use public/external functions from all contracts
 allContracts: true
 

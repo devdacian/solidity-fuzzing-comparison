@@ -18,6 +18,7 @@ import "forge-std/Test.sol";
 //
 // Foundry Fuzzer Info:
 //
+// change foundry.toml fuzz run to 5000
 // run from base project directory with:
 // forge test --match-contract OmniAdvancedFoundry
 //
