@@ -40,5 +40,8 @@ contract LiquidateDosCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
       t(property_user_active_markets_correct(), "User active markets correct");
     }
 
-    // TODO: wrap new "property_*" invariant into Foundry-style invariant
+    function invariant_property_liquidate_no_unexpected_error() public {
+      t(property_liquidate_no_unexpected_error(), "Liquidate failed with unexpected error");
+    }
+    
 }

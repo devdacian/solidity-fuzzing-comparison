@@ -8,6 +8,12 @@ abstract contract Setup is BaseSetup {
     // contract being tested
     Priority priority;
 
+    // ghost variables
+    uint8 priority0;
+    uint8 priority1;
+    uint8 priority2;
+    uint8 priority3;
+
     function setup() internal virtual override {
         priority = new Priority();
     }

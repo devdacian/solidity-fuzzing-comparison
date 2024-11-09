@@ -31,6 +31,7 @@ abstract contract Properties is Setup, Asserts {
         result = true;
     }
 
-    // TODO: write an additional invariant. If you need to track additional
-    // ghost variables, add them to `Setup` storage
+    function property_liquidate_no_unexpected_error() public view returns(bool result) {
+        result = !liquidateUnexpectedError;
+    }
 }

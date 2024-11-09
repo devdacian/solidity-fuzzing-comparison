@@ -35,5 +35,11 @@ contract OpRegCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
       targetSelector(FuzzSelector({ addr: address(this), selectors: selectors }));
     }
 
+    // wrap every "property_*" invariant function into
+    // a Foundry-style "invariant_*" function
+    function invariant_operator_ids_have_unique_addresses() public {
+      t(property_operator_ids_have_unique_addresses(), "Operator ids have unique addresses");
+    }
+
     // TODO: wrap new "property_*" invariant into Foundry-style invariant
 }

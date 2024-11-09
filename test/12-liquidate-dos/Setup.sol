@@ -17,6 +17,9 @@ abstract contract Setup is BaseSetup {
     mapping(address user => uint8 activeMarketCount) userActiveMarketsCount;
     mapping(address user => mapping(uint8 marketId => bool userInMarket)) userActiveMarkets;
 
+    // track unexpected errors
+    bool liquidateUnexpectedError;
+
     function setup() internal virtual override {
         addressPool.push(address(0x1111));
         addressPool.push(address(0x2222));

@@ -29,27 +29,41 @@ abstract contract TargetFunctions is BaseTargetFunctions, Properties {
         liquidateDos.toggleLiquidations(toggle);
     }
 
-    // TODO: re-write this handler to detect unexpected errors
-    // and fail in that case. The most cross-fuzzer compatible way
-    // appears to be:
-    // 1) add a bool ghost variable to `Setup`
-    // 2) add an invariant to `Properties` which fails if the bool is `true`
-    // 3) set the bool in this handler if an unexpected error has occured
-    //
-    // Echidna, Medusa & Foundry will all fail with an invariant failure if
-    // `liquidate` failed with an unexpected error
     function handler_liquidate(uint8 victimIndex) external {
         address victim = _getRandomAddress(victimIndex);
 
-        liquidateDos.liquidate(victim);
+        try liquidateDos.liquidate(victim) {
+            // update ghost variables
+            delete userActiveMarketsCount[victim];
 
-        // update ghost variables
-        delete userActiveMarketsCount[victim];
-
-        for(uint8 marketId = liquidateDos.MIN_MARKET_ID();
-            marketId <= liquidateDos.MAX_MARKET_ID();
-            marketId++) {
-            delete userActiveMarkets[victim][marketId];
+            for(uint8 marketId = liquidateDos.MIN_MARKET_ID();
+                marketId <= liquidateDos.MAX_MARKET_ID();
+                marketId++) {
+                delete userActiveMarkets[victim][marketId];
+            }
         }
+        catch(bytes memory err) {
+            bytes4[] memory allowedErrors = new bytes4[](2);
+            allowedErrors[0] = ILiquidateDos.LiquidationsDisabled.selector;
+            allowedErrors[1] = ILiquidateDos.LiquidateUserNotInAnyMarkets.selector;
+
+            if(_isUnexpectedError(bytes4(err), allowedErrors)) {
+                liquidateUnexpectedError = true;
+            }
+        }
+    }
+
+    // returns whether error was unexpected
+    function _isUnexpectedError(
+        bytes4 errorSelector,
+        bytes4[] memory allowedErrors
+    ) internal pure returns(bool isUnexpectedError) {
+        for (uint256 i; i < allowedErrors.length; i++) {
+            if (errorSelector == allowedErrors[i]) {
+                return false;
+            }
+        }
+
+        isUnexpectedError = true;
     }
 }

@@ -24,6 +24,7 @@ abstract contract Properties is Setup, Asserts {
         // is the default value for bool
     }
 
-    // TODO: write an additional invariant. If you need to track additional
-    // ghost variables, add them to `Setup` storage
+    function property_total_preclaimed_lt_eq_max_preclaimable() public view returns(bool result) {
+        result = totalPreclaimed <= MAX_PRECLAIMABLE;
+    }
 }

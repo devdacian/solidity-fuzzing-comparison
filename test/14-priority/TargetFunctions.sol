@@ -13,6 +13,12 @@ abstract contract TargetFunctions is BaseTargetFunctions, Properties {
                                        priority.MAX_COLLATERAL_ID()));
 
         priority.addCollateral(collateralId);
+
+        // update ghost variables with expected order
+        if(priority0 == 0) priority0 = collateralId;
+        else if(priority1 == 0) priority1 = collateralId;
+        else if(priority2 == 0) priority2 = collateralId;
+        else priority3 = collateralId;
     }
 
     function handler_removeCollateral(uint8 collateralId) external {
@@ -21,5 +27,21 @@ abstract contract TargetFunctions is BaseTargetFunctions, Properties {
                                        priority.MAX_COLLATERAL_ID()));
 
         priority.removeCollateral(collateralId);
+
+        // update ghost variables with expected order
+        if(priority0 == collateralId) {
+            priority0 = priority1;
+            priority1 = priority2;
+            priority2 = priority3;
+        }
+        else if(priority1 == collateralId) {
+            priority1 = priority2;
+            priority2 = priority3;
+        }
+        else if(priority2 == collateralId) {
+            priority2 = priority3;
+        }
+        
+        delete priority3;
     }
 }

@@ -31,10 +31,14 @@ abstract contract TargetFunctions is BaseTargetFunctions, Properties {
         vesting.transferPoints(recipient, pointsToTransfer);
     }
 
-    // TODO: write a handler for `VestingExt::preclaim`. If you need to track
-    // additional ghost variables, add them to `Setup` storage and update
-    // in this handler
     function handler_preclaim(uint256 userIndex) external {
+        userIndex = between(userIndex, 0, recipients.length-1);
 
+        address user = recipients[userIndex];
+
+        vm.prank(user);
+        uint96 userPreclaimed = vesting.preclaim();
+
+        totalPreclaimed += userPreclaimed;
     }
 }

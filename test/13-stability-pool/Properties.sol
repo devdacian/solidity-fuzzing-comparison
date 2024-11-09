@@ -7,9 +7,18 @@ import { Asserts } from "@chimera/Asserts.sol";
 abstract contract Properties is Setup, Asserts {
 
     function property_stability_pool_solvent() public view returns(bool result) {
-        // TODO: implement this invariant. If you need to track additional
-        // ghost variables, add them to `Setup` storage. The challenge
-        // can be solved without any additional ghost variables
-        result = true;
+        uint256 totalClaimableRewards;
+
+        // sum total claimable rewards for each possible user
+        for(uint8 i; i<ADDRESS_POOL_LENGTH; i++) {
+            address user = addressPool[i];
+
+            totalClaimableRewards += stabilityPool.getDepositorCollateralGain(user);
+        }
+
+        // pool is solvent if the total claimable rewards are
+        // lte its collateral token balance
+        if(totalClaimableRewards <= collateralToken.balanceOf(address(stabilityPool)))
+            result = true;
     }
 }

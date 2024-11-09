@@ -41,5 +41,7 @@ contract VestingExtCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
       t(property_users_points_sum_eq_total_points(), "User points sum total points");
     }
 
-    // TODO: wrap new "property_*" invariant into Foundry-style invariant
+    function invariant_total_preclaimed_lt_eq_max_preclaimable() public {
+      t(property_total_preclaimed_lt_eq_max_preclaimable(), "Total Preclaimed <= Max Preclaimable");
+    }
 }
