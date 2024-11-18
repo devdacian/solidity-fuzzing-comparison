@@ -40,12 +40,6 @@ contract UnstoppableBasicEchidna {
         token.transfer(attacker, INIT_TOKENS_ATTACKER);
 
         // attacker configured as msg.sender in yaml config
-
-        // basic test with no advanced guiding of the fuzzer
-        // Echidna frequently breaks the generic invariant and the more
-        // specific invariant with no guidance.
-        // Medusa always breaks both invariants and achieves this quicker
-        // than Echidna!
     }
 
     // invariant #1 very generic but Echidna can still break it even

@@ -43,10 +43,6 @@ contract UnstoppableBasicFoundry is Test {
 
         // only one attacker
         targetSender(attacker);
-
-        // basic test with no advanced guiding of the fuzzer
-        // Foundry can occasionally break the second easier invariant
-        // but never the first in basic unguided mode
     }
     
     // invariant #1 very generic, harder to break
