@@ -19,3 +19,4 @@ docs/
 
 # misc
 .DS_Store
+.certora_internal
