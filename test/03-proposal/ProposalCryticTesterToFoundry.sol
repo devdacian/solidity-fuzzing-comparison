@@ -9,9 +9,9 @@ import {Test} from "forge-std/Test.sol";
 // forge test --match-contract ProposalCryticTesterToFoundry -vvv
 //
 // get coverage report (see https://medium.com/@rohanzarathustra/forge-coverage-overview-744d967e112f):
-// 1) forge coverage --report lcov --report-file test/03-proposal/coverage-foundry-basic.lcov --match-contract ProposalCryticTesterToFoundry
-// 2) genhtml test/03-proposal/coverage-foundry-basic.lcov -o test/03-proposal/coverage-foundry-basic
-// 3) open test/03-proposal/coverage-foundry-basic/index.html in your browser and
+// 1) forge coverage --report lcov --report-file test/03-proposal/coverage-foundry.lcov --match-contract ProposalCryticTesterToFoundry
+// 2) genhtml test/03-proposal/coverage-foundry.lcov -o test/03-proposal/coverage-foundry
+// 3) open test/03-proposal/coverage-foundry/index.html in your browser and
 //    navigate to the relevant source file to see line-by-line execution records
 contract ProposalCryticTesterToFoundry is Test, Properties, FoundryAsserts {
     function setUp() public virtual {

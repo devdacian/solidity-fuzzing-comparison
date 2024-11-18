@@ -8,7 +8,7 @@
 		"shrinkLimit": 500,
 		"callSequenceLength": 100,
 		"_COMMENT_TESTING_8": "added directory to store coverage data",
-		"corpusDirectory": "coverage-medusa-basic",
+		"corpusDirectory": "coverage-medusa",
 		"coverageEnabled": true,
 		"_COMMENT_TESTING_2": "added test contract to deploymentOrder",
 		"targetContracts": ["ProposalCryticTester"],

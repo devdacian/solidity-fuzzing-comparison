@@ -23,9 +23,9 @@ import "forge-std/Test.sol";
 // forge test --match-contract OmniAdvancedFoundry
 //
 // get coverage report (see https://medium.com/@rohanzarathustra/forge-coverage-overview-744d967e112f):
-// 1) forge coverage --report lcov --report-file test/08-omni-protocol/coverage-foundry-advanced.lcov --match-contract OmniAdvancedFoundry
-// 2) genhtml test/08-omni-protocol/coverage-foundry-advanced.lcov -o test/08-omni-protocol/coverage-foundry-advanced
-// 3) open test/08-omni-protocol/coverage-foundry-advanced/index.html in your browser and
+// 1) forge coverage --report lcov --report-file test/08-omni-protocol/coverage-foundry.lcov --match-contract OmniAdvancedFoundry
+// 2) genhtml test/08-omni-protocol/coverage-foundry.lcov -o test/08-omni-protocol/coverage-foundry
+// 3) open test/08-omni-protocol/coverage-foundry/index.html in your browser and
 //    navigate to the relevant source file to see line-by-line execution records
 //
 // Foundry is unable to break any invariants even when Foundry.toml

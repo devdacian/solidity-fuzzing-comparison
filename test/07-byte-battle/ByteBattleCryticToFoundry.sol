@@ -9,7 +9,7 @@ import {Test} from "forge-std/Test.sol";
 // forge test --match-contract ByteBattleCryticToFoundry
 //
 // get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
-// forge coverage --report lcov --report-file test/07-byte-battle/coverage-foundry-basic.lcov --match-contract ByteBattleCryticToFoundry
+// forge coverage --report lcov --report-file test/07-byte-battle/coverage-foundry.lcov --match-contract ByteBattleCryticToFoundry
 contract ByteBattleCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
 
 }

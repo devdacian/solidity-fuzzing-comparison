@@ -9,7 +9,7 @@ import {Test} from "forge-std/Test.sol";
 // forge test --match-contract RarelyFalseCryticToFoundry --fuzz-runs 2000000
 //
 // get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
-// forge coverage --report lcov --report-file test/06-rarely-false/coverage-foundry-basic.lcov --match-contract RarelyFalseCryticToFoundry
+// forge coverage --report lcov --report-file test/06-rarely-false/coverage-foundry.lcov --match-contract RarelyFalseCryticToFoundry
 contract RarelyFalseCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
 
 }

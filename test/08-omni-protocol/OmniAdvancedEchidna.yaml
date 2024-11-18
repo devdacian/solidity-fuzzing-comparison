@@ -9,7 +9,7 @@ sender: ["0x1000000000000000000000000000000000000000", "0x2000000000000000000000
 
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
-corpusDir: "./test/08-omni-protocol/coverage-echidna-advanced"
+corpusDir: "./test/08-omni-protocol/coverage-echidna"
 
 # changed prefix
 prefix: "medusa_"

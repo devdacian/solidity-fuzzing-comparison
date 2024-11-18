@@ -15,7 +15,7 @@ testLimit: 10000000
 
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
-corpusDir: "./test/06-rarely-false/coverage-echidna-basic"
+corpusDir: "./test/06-rarely-false/coverage-echidna"
 
 # instruct foundry to compile tests
 cryticArgs: ["--foundry-compile-all"]

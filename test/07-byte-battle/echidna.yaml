@@ -9,7 +9,7 @@ testMode: "assertion"
 
 # record fuzzer coverage to see what parts of the code
 # fuzzer executes
-corpusDir: "./test/07-byte-battle/coverage-echidna-basic"
+corpusDir: "./test/07-byte-battle/coverage-echidna"
 
 # instruct foundry to compile tests
 cryticArgs: ["--foundry-compile-all"]
