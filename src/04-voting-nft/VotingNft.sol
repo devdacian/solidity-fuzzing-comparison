@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/math/Math.sol";
 
 // using regular and old Ownable for simplicity, any findings
@@ -31,7 +31,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 // not be used in any live/production environment; it is purely an
 // educational bug-hunting exercise based on a real-world example.
 //
-contract VotingNft is ERC721, Ownable {
+contract VotingNft is ERC721Enumerable, Ownable {
 
     // useful constants
     uint256 private constant PERCENTAGE_100 = 10 ** 27;
