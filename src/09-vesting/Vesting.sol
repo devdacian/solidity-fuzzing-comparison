@@ -2,7 +2,7 @@
 pragma solidity ^0.8.23;
 
 contract Vesting {
-    uint24 public constant TOTAL_POINTS = 100_000;
+    uint24 public constant TOTAL_POINTS_PCT = 100_000;
 
     struct AllocationInput {
         address recipient;
@@ -28,13 +28,13 @@ contract Vesting {
             require(allocations[allocInput[i].recipient].points == 0, "Already set");
 
             totalPoints += allocInput[i].points;
-            require(totalPoints <= TOTAL_POINTS, "Too many points");
+            require(totalPoints <= TOTAL_POINTS_PCT, "Too many points");
 
             allocations[allocInput[i].recipient].points = allocInput[i].points;
             allocations[allocInput[i].recipient].vestingWeeks = allocInput[i].vestingWeeks;
         }
         
-        require(totalPoints == TOTAL_POINTS, "Not enough points");
+        require(totalPoints == TOTAL_POINTS_PCT, "Not enough points");
     }
 
     // users entitled to an allocation can transfer their points to
