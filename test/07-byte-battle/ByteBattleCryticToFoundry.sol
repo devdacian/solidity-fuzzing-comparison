@@ -10,6 +10,9 @@ import {Test} from "forge-std/Test.sol";
 //
 // get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
 // forge coverage --report lcov --report-file test/07-byte-battle/coverage-foundry.lcov --match-contract ByteBattleCryticToFoundry
+//
+// run halmos from base project directory:
+// halmos --function test_ --match-contract ByteBattleCryticToFoundry
 contract ByteBattleCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
 
 }

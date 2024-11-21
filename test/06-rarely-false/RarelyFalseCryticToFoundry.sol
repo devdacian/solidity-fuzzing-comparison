@@ -10,6 +10,9 @@ import {Test} from "forge-std/Test.sol";
 //
 // get coverage report ( can be imported into https://lcov-viewer.netlify.app/ )
 // forge coverage --report lcov --report-file test/06-rarely-false/coverage-foundry.lcov --match-contract RarelyFalseCryticToFoundry
+//
+// run halmos from base project directory:
+// halmos --function test_ --match-contract RarelyFalseCryticToFoundry
 contract RarelyFalseCryticToFoundry is Test, TargetFunctions, FoundryAsserts {
 
 }
