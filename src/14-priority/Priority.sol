@@ -41,4 +41,14 @@ contract Priority {
         val = uint8(collateralPriority.at(index));
     }
 
+    function containsCollateral(uint8 collateralId) external view returns(bool result) {
+        if(collateralId < MIN_COLLATERAL_ID || collateralId > MAX_COLLATERAL_ID) revert InvalidCollateralId();
+
+        result = collateralPriority.contains(collateralId);
+    }
+
+    function numCollateral() external view returns(uint256 length) {
+        length = collateralPriority.length();
+    }
+
 }
