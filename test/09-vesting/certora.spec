@@ -16,5 +16,10 @@ hook Sstore currentContract.allocations[KEY address recipient].points uint24 new
     g_sum_user_points = g_sum_user_points + new_value - old_value;    
 }
 
+// this isn't working as expected since Certora HAVOC
+// g_sum_user_points so that it isn't equal to the sum of allocations.points
+// not sure how to fix this as in the underlying contract this is
+// enforced in the constructor so the state Certora is getting to
+// is actually impossible to reach
 invariant users_points_sum_eq_total_points()
     g_sum_user_points == to_mathint(currentContract.TOTAL_POINTS_PCT());
