@@ -1,8 +1,8 @@
-# Solidity Fuzzing Challenge: Foundry vs Echidna vs Medusa #
+# Solidity Fuzzing Challenge: Foundry vs Echidna vs Medusa (plus Halmos & Certora) #
 
-A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the primary goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
+A comparison of solidity fuzzing tools [Foundry](https://book.getfoundry.sh/), [Echidna](https://secure-contracts.com/program-analysis/echidna/index.html) & [Medusa](https://github.com/crytic/medusa) also considering Formal Verification tools such as [Halmos](https://github.com/a16z/halmos) and [Certora](https://docs.certora.com/en/latest/docs/user-guide/tutorials.html). This challenge set is not intended to be an academically rigorous benchmark but rather to present the experiences of an auditor "in the trenches"; the primary goal is finding the best performance "out of the box" with as little guidance & tweaking as possible.
 
-Many of the challenges are simplified versions of audit findings from my private audits at [Cyfrin](https://www.cyfrin.io). These findings could have been found by the protocol developers themselves prior to an external audit if the protocol had written the correct fuzz testing invariants. Hence a secondary goal of this repo is to show developers how to write better fuzz testing invariants to improve their protocol security prior to engaging external auditors.
+Many of the challenges are simplified versions of audit findings from my private audits at [Cyfrin](https://www.cyfrin.io). These findings could have been found by the protocol developers themselves prior to an external audit if the protocol had written the correct [fuzz testing invariants](https://dacian.me/find-highs-before-external-auditors-using-invariant-fuzz-testing). Hence a secondary goal of this repo is to show developers how to write better fuzz testing invariants to improve their protocol security prior to engaging external auditors.
 
 ## Setup ##
 
@@ -35,20 +35,24 @@ Foundry, Echidna & Medusa in `basic` mode are able to easily break the invariant
 
 ### Challenge #4 Voting NFT: (Winner TIED ALL) ###
 
-In `basic` configuration Foundry, Echidna & Medusa are all able to break the easier invariant but not the more difficult one. All Fuzzers are able to provide the user with a minimal transaction set to generate the exploit. Hence they are tied, there is no clear winner. Please note that the fuzz solvers for this challenge are not able to be publicly released at this time.
+In `basic` configuration Foundry, Echidna & Medusa are all able to break the easier invariant but not the more difficult one. All Fuzzers are able to provide the user with a minimal transaction set to generate the exploit. Hence they are tied, there is no clear winner.
 
 ### Challenge #5 Token Sale: (Winner MEDUSA) ###
 
 In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner.
 
-### Challenge #6 Rarely False: (Winner NONE) ###
+### Challenge #6 Rarely False: (Winner TIED Halmos & Certora) ###
 
-Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge. Medusa [used](https://twitter.com/DevDacian/status/1732199452344221913) to be able to break it almost instantly but has [regressed](https://github.com/crytic/medusa/issues/305) in performance after recent changes and is now unable to break it. Hence there is no current winner.
+Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge. Medusa [used](https://twitter.com/DevDacian/status/1732199452344221913) to be able to break it almost instantly but has [regressed](https://github.com/crytic/medusa/issues/305) in performance after recent changes and is now unable to break it. Halmos and Certora can break it so they are the winners.
 
-### Challenge #7 Byte Battle: (Winner TIED FOUNDRY & ECHIDNA)
+### Challenge #7 Byte Battle: (Winner TIED FOUNDRY, ECHIDNA, HALMOS, CERTORA)
 
 Foundry & Echidna are able to break the assertion in this stateless fuzzing challenge, but Medusa is [unable](https://github.com/crytic/medusa/issues/307) to break it.
 
 ### Challenge #8 Omni Protocol: (Winner MEDUSA)
 
 All 3 Fuzzers configured in `advanced` guided mode attempted to break 16 invariants on Beta Finance [Omni Protocol](https://github.com/beta-finance/Omni-Protocol). Medusa is typically able to break 2 invariants within 5 minutes (often much sooner on subsequent runs) though on the first run can take a bit longer. Echidna can sometimes break 1 invariant within 5 minutes and Foundry appears to never be able to break any invariants within 5 minutes. Hence Medusa is the clear winner. The fuzzers written for this challenge were [contributed](https://github.com/beta-finance/Omni-Protocol/pull/2) to Beta Finance.
+
+### Challenge 9->14
+
+Some additional solvers have been added based upon real-world findings from my private audits.
