@@ -9,6 +9,11 @@ methods {
 // a user shouldn't be able to preclaim after transferring
 // points if they have already preclaimed
 rule preclaimed_cant_preclaim_after_transfer(address user, address newAddr) {
+    // enforce address sanity checks
+    require user != newAddr &&
+            user != currentContract &&
+            newAddr != currentContract;
+
     // enforce that user has some allocated points
     uint24 userPointsPre = currentContract.allocations[user].points;
     require userPointsPre > 0;
