@@ -41,7 +41,7 @@ In `basic` configuration Foundry, Echidna & Medusa are all able to break the eas
 
 In `basic` configuration Foundry & Echidna can only break the easier and more valuable invariant which leads to a Critical exploit but not the harder though less valuable invariant which leads to a High/Medium. However Medusa is able to almost immediately break both invariants in unguided `basic` mode, making Medusa the clear winner.
 
-### Challenge #6 Rarely False: (Winner TIED Halmos & Certora) ###
+### Challenge #6 Rarely False: (Winner TIED HALMOS & CERTORA) ###
 
 Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge. Medusa [used](https://twitter.com/DevDacian/status/1732199452344221913) to be able to break it almost instantly but has [regressed](https://github.com/crytic/medusa/issues/305) in performance after recent changes and is now unable to break it. Halmos and Certora can break it so they are the winners.
 
