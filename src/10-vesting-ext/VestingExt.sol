@@ -84,6 +84,7 @@ contract VestingExt {
     function preclaim() external returns(uint96 userPreclaimAmount) {
         AllocationData memory userAllocation = allocations[msg.sender];
 
+        require(!userAllocation.claimed, "Already claimed");
         require(userAllocation.preclaimed == 0, "Already preclaimed");
 
         userPreclaimAmount = getUserMaxPreclaimable(getUserTokenAllocation(userAllocation.points));
