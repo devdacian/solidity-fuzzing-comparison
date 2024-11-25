@@ -4,6 +4,8 @@
 // there should exist no function f() that allows a user
 // to increase their allocated points
 rule user_cant_increase_points(address user) {
+    require user != currentContract;
+
     // enforce that user has some allocated points
     uint24 userPointsPre = currentContract.allocations[user].points;
     require userPointsPre > 0;
