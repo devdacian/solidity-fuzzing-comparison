@@ -25,9 +25,9 @@ function userMaxPreclaimableCVL(address user) returns uint96 {
     return maxPreclaimable;
 }
 
-// when a user who has preclaimed transfers their poinst to another
+// when a user who has preclaimed transfers their points to another
 // address, the preclaimed amount should transfer over to prevent
-// preclaiming more than allowed by transferring to new addresses
+// gaming preclaim functionality by preclaiming more than allowed
 rule preclaimedTransferred(env e, address targetUser, uint24 points) {
     // enforce address sanity checks
     require e.msg.sender != currentContract && targetUser != currentContract &&
