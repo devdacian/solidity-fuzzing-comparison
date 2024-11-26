@@ -25,7 +25,7 @@ rule user_cant_increase_points(address user) {
 
 // the same property can also be expressed in another way:
 // that the sum of users' individual points should always remain equal to TOTAL_POINTS
-// this solution was provided by https://x.com/alexzoid_eth
+// solution provided by https://x.com/alexzoid_eth
 methods {
     function TOTAL_POINTS_PCT() external returns uint24 envfree => ALWAYS(100000);
 }
