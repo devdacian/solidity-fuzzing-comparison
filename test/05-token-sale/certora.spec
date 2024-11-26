@@ -56,3 +56,30 @@ rule tokens_bought_eq_tokens_sold(uint256 amountToBuy) {
     assert getSellTokenSoldAmount() == (buyerBuyTokenBalPre - buyerBuyTokenBalPost) 
                                        * 10 ^ (sellTokenDecimals - buyTokenDecimals);
 }
+
+// this rule was provided by https://x.com/alexzoid_eth
+rule max_token_buy_per_user(env e1, env e2, uint256 amountToBuy1, uint256 amountToBuy2) {   
+    // enforce valid initial state
+    require(currentContract.s_maxTokensPerBuyer <= currentContract.s_sellTokenTotalAmount);
+
+    // enforce same buyer in different calls
+    require e1.msg.sender == e2.msg.sender;
+    require e1.msg.sender != currentContract && e1.msg.sender != currentContract.s_creator;
+
+    // save initial balance
+    mathint balanceBefore = currentContract.s_sellToken.balanceOf(e1, e1.msg.sender);
+    
+    // prevent over-flow in ERC20 (otherwise totalSupply and balances synchronization required)
+    require balanceBefore < max_uint128 && amountToBuy1 < max_uint128 && amountToBuy1 < max_uint128;
+
+    // perform two separate buy transactions
+    buy(e1, amountToBuy1);
+    buy(e2, amountToBuy2);
+
+    // save final balance
+    mathint balanceAfter = currentContract.s_sellToken.balanceOf(e1, e1.msg.sender);
+
+    // verify total bought by same user must not exceed max limit per user
+    mathint totalBuy = balanceAfter > balanceBefore ? balanceAfter - balanceBefore : 0;
+    assert totalBuy <= currentContract.s_maxTokensPerBuyer;
+}
