@@ -11,8 +11,8 @@ definition PRECISION_SELL()    returns uint256 = 18;
 definition FUNDING_MIN()       returns uint256 = 100;
 definition BUYERS_MIN()        returns uint256 = 3;
 
-// currently this results in "Rule was successfully verified without running SMT solver"
-// not sure why...
+// the amount of tokens bought should equal the amount of tokens sold
+// due to 1:1 exchange ratio
 rule tokens_bought_eq_tokens_sold(uint256 amountToBuy) {
     env e1;
 
