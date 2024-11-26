@@ -19,19 +19,19 @@ rule stability_pool_solvent(address spDep1, address spDep2) {
             spDep2 != currentContract.collateralToken;
 
     // enforce neither user has active deposits or rewards
-    require currentContract.accountDeposits[spDep1].amount == 0      &&
-            currentContract.accountDeposits[spDep1].timestamp == 0   &&
-            currentContract.depositSnapshots[spDep1].P == 0         &&
-            currentContract.depositSnapshots[spDep1].scale == 0     &&
-            currentContract.depositSnapshots[spDep1].epoch == 0     &&
-            currentContract.depositSums[spDep1] == 0                &&
+    require currentContract.accountDeposits[spDep1].amount     == 0 &&
+            currentContract.accountDeposits[spDep1].timestamp  == 0 &&
+            currentContract.depositSnapshots[spDep1].P         == 0 &&
+            currentContract.depositSnapshots[spDep1].scale     == 0 &&
+            currentContract.depositSnapshots[spDep1].epoch     == 0 &&
+            currentContract.depositSums[spDep1]                == 0 &&
             currentContract.collateralGainsByDepositor[spDep1] == 0 &&
-            currentContract.accountDeposits[spDep2].amount == 0      &&
-            currentContract.accountDeposits[spDep2].timestamp == 0   &&
-            currentContract.depositSnapshots[spDep2].P == 0         &&
-            currentContract.depositSnapshots[spDep2].scale == 0     &&
-            currentContract.depositSnapshots[spDep2].epoch == 0     &&
-            currentContract.depositSums[spDep2] == 0                &&
+            currentContract.accountDeposits[spDep2].amount     == 0 &&
+            currentContract.accountDeposits[spDep2].timestamp  == 0 &&
+            currentContract.depositSnapshots[spDep2].P         == 0 &&
+            currentContract.depositSnapshots[spDep2].scale     == 0 &&
+            currentContract.depositSnapshots[spDep2].epoch     == 0 &&
+            currentContract.depositSums[spDep2]                == 0 &&
             currentContract.collateralGainsByDepositor[spDep2] == 0;
 
     // enforce that both users have tokens to deposit into stability pool
