@@ -18,12 +18,12 @@ rule operator_addresses_have_unique_ids(address opAddr1, address opAddr2) {
             currentContract.operatorIdToAddress[op2AddrToId] == opAddr2;
 
     // perform any arbitrary successful transaction f()
-    env e2;
+    env e;
     method f;
     calldataarg args;
-    f(e2, args);
+    f(e, args);
 
-    // verify that no transaction exists would corrupt the uniqueness
+    // verify that no transaction exists which corrupts the uniqueness
     // property between operator_id : operator_address
     assert currentContract.operatorIdToAddress[op1AddrToId] !=
            currentContract.operatorIdToAddress[op2AddrToId];
