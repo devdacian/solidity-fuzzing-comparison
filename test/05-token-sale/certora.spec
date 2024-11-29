@@ -70,7 +70,7 @@ rule max_token_buy_per_user(env e1, env e2, uint256 amountToBuy1, uint256 amount
     mathint balanceBefore = currentContract.s_sellToken.balanceOf(e1, e1.msg.sender);
     
     // prevent over-flow in ERC20 (otherwise totalSupply and balances synchronization required)
-    require balanceBefore < max_uint128 && amountToBuy1 < max_uint128 && amountToBuy1 < max_uint128;
+    require balanceBefore < max_uint128 && amountToBuy1 < max_uint128 && amountToBuy2 < max_uint128;
 
     // perform two separate buy transactions
     buy(e1, amountToBuy1);
