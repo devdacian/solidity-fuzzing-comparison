@@ -13,7 +13,8 @@ methods {
 rule priority_order_correct() {
     // require no initial collateral to prevent HAVOC corrupting
     // EnumerableSet _positions -> _values references
-    require numCollateral() == 0;
+    require numCollateral() == 0   && !containsCollateral(1) &&
+            !containsCollateral(2) && !containsCollateral(3);
 
     // setup initial state with collateral_id order: 1,2,3 which ensures
     // EnumerableSet _positions -> _values references are correct
@@ -23,21 +24,21 @@ rule priority_order_correct() {
     addCollateral(e1, 3);
 
     // sanity check initial state
-    require numCollateral() == 3  && containsCollateral(1) &&
-            containsCollateral(2) && containsCollateral(3);
+    assert numCollateral() == 3  && containsCollateral(1) &&
+           containsCollateral(2) && containsCollateral(3);
 
     // sanity check initial order; this also verifies that
-    // addCollateral worked as expected
-    require getCollateralAtPriority(0) == 1 &&
-            getCollateralAtPriority(1) == 2 &&
-            getCollateralAtPriority(2) == 3;
+    // `addCollateral` worked as expected
+    assert getCollateralAtPriority(0) == 1 &&
+           getCollateralAtPriority(1) == 2 &&
+           getCollateralAtPriority(2) == 3;
 
     // successfully remove first id 1
     removeCollateral(e1, 1);
 
     // verify it was removed and other ids still exist
-    require numCollateral() == 2  && !containsCollateral(1) &&
-            containsCollateral(2) && containsCollateral(3);
+    assert numCollateral() == 2  && !containsCollateral(1) &&
+           containsCollateral(2) && containsCollateral(3);
 
     // assert existing order 2,3 preserved minus the removed first id 1
     assert getCollateralAtPriority(0) == 2 &&
