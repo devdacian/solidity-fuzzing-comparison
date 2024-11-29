@@ -25,7 +25,7 @@ rule total_power_gt_zero_power_calc_start(address to, uint256 tokenId) {
 
     // enforce no nfts have yet been created; in practice some may
     // exist in storage though due to certora havoc
-    require totalSupply() == 0 && getTotalPower() == 0;
+    require totalSupply() == 0 && getTotalPower() == 0 && balanceOf(to) == 0;
 
     // enforce msg.sender as owner required to mint nfts
     env e1;
@@ -39,8 +39,8 @@ rule total_power_gt_zero_power_calc_start(address to, uint256 tokenId) {
     safeMint(e1, to, tokenId);
 
     // sanity check results of first mint
-    require totalSupply() == 1 && balanceOf(to) == 1 && ownerOf(tokenId) == to &&
-            getTotalPower() == currentContract.s_maxNftPower;
+    assert totalSupply() == 1 && balanceOf(to) == 1 && ownerOf(tokenId) == to &&
+           getTotalPower() == currentContract.s_maxNftPower;
 
     // perform any arbitrary successful transaction at power calculation
     // start time, where msg.sender is not an nft owner or an admin
