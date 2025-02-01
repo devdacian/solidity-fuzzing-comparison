@@ -20,3 +20,4 @@ docs/
 # misc
 .DS_Store
 .certora_internal
+slither_results.json

@@ -45,9 +45,9 @@ In `basic` configuration Foundry & Echidna can only break the easier and more va
 
 Both Echidna & Foundry are unable to break the assertion in this stateless fuzzing challenge. Medusa [used](https://twitter.com/DevDacian/status/1732199452344221913) to be able to break it almost instantly but has [regressed](https://github.com/crytic/medusa/issues/305) in performance after recent changes and is now unable to break it. Halmos and Certora can break it so they are the winners.
 
-### Challenge #7 Byte Battle: (Winner TIED FOUNDRY, ECHIDNA, HALMOS, CERTORA)
+### Challenge #7 Byte Battle: (Winner TIED ALL)
 
-Foundry & Echidna are able to break the assertion in this stateless fuzzing challenge, but Medusa is [unable](https://github.com/crytic/medusa/issues/307) to break it.
+All tools are able to quickly break this challenge.
 
 ### Challenge #8 Omni Protocol: (Winner MEDUSA)
 
